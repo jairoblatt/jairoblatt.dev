@@ -12,6 +12,9 @@
             :key="`${link.name}-navbar`"
             :to="link.route"
             class="header__nav-item"
+            :class="{
+              'header__nav-item--active': isBlogArticle(link.name),
+            }"
             exact-active-class="header__nav-item--active"
           >
             {{ link.name }}
@@ -61,6 +64,12 @@ export default Vue.extend({
   methods: {
     handleScroll() {
       this.onTop = window.pageYOffset < 60;
+    },
+
+    isBlogArticle(routeName: string): boolean {
+      return (
+        !!this.$route?.fullPath?.startsWith('/blog') && routeName === 'Blog'
+      );
     },
   },
 });

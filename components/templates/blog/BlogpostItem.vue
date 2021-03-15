@@ -78,6 +78,6 @@ export default Vue.extend({
 }
 
 .blogpost-item__image {
-  height: 63vh;
+  @apply object-cover;
 }
 </style>

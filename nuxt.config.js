@@ -17,6 +17,7 @@ export default {
     '@/assets/scss/dark.scss',
     '@/assets/scss/main.scss',
     '@/assets/scss/content.scss',
+    '@/assets/scss/rlt.scss',
   ],
 
   plugins: [],
@@ -30,6 +31,14 @@ export default {
   pageTransition: {
     name: 'home',
     mode: '',
+  },
+
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-duotone-sea.css',
+      },
+    },
   },
 
   modules: ['@nuxtjs/pwa', '@nuxt/content'],

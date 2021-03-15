@@ -33,15 +33,17 @@
 
   & pre {
     @apply static;
-
-    background-color: theme('colors.dark.elevatedSurface');
-
     code {
       color: theme('colors.dark.onSurfacePrimary');
     }
   }
   // code snippet block
+
   & pre {
+    &::-webkit-scrollbar {
+      height: 5px !important;
+    }
+
     code {
       @apply bg-transparent;
 

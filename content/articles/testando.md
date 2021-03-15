@@ -1,8 +1,8 @@
 ---
 title: 'Build a dev.to clone with Nuxt new fetch'
 description: Let’s build a blazing fast articles and tutorials app using Nuxt and the DEV API, with lazy loading, placeholders, caching and trendy neumorphic design UI.
-imgUrl: https://image.freepik.com/free-photo/rear-view-programmer-working-all-night-long_1098-18697.jpg
-date: 14 de março de 2021
+imgUrl: blog/build-dev-to-clone-with-nuxt-new-fetch/main.png
+date: 2020-04-08
 authors:
   - name: Sergey Bedritsky
     avatarUrl: https://pbs.twimg.com/profile_images/1244291720566669315/pGg6Xn-M_400x400.jpg

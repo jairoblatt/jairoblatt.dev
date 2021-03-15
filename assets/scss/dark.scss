@@ -55,6 +55,21 @@
     }
   }
 
+  // BlogpostItem component
+  .blogpost-item__container {
+    @apply text-light-surface;
+
+    .blogpost-item__title {
+      @apply text-light-surface;
+    }
+
+    .blogpost-item__tags {
+      .tags-item {
+        @apply border-nuxt-lightgreen;
+      }
+    }
+  }
+
   // TheFooter component
   .footer__container {
     background: $dark-background !important;
