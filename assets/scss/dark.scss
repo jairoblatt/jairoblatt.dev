@@ -1,0 +1,74 @@
+.dark-mode {
+  // Layout Default
+  $dark-background: #222831;
+
+  @apply transition-colors;
+
+  &.layout-container {
+    background: $dark-background !important;
+  }
+
+  // TheHeader component
+  .header {
+    @apply text-light-surface;
+
+    background: $dark-background !important;
+
+    &.header--scroll {
+      box-shadow: none;
+    }
+    .header__avatar h3 {
+      @apply text-light-surface;
+    }
+  }
+
+  // Bio component
+  .bio__container p,
+  h2 {
+    @apply text-light-surface;
+  }
+
+  // BlogPostPreviewItem component
+  .blog-post-preview,
+  .project-preview {
+    @apply text-light-surface #{!important};
+
+    background: #2b323d !important;
+    &:hover {
+      @apply transition-colors duration-500 #{!important};
+
+      background: #2f3642 !important;
+    }
+
+    .blog-post-preview__tags-item,
+    .project-preview__tags-item {
+      @apply text-dark-onSurfaceSecondary border-dark-onSurfaceSecondary;
+    }
+    // background: #1b262c !important;
+  }
+
+  // Policies Page
+  .policies__container {
+    h1,
+    p {
+      @apply text-light-surface;
+    }
+  }
+
+  // TheFooter component
+  .footer__container {
+    background: $dark-background !important;
+    .footer__social-owner li,
+    .footer__social-owner small {
+      @apply text-light-onSurfaceSecondary;
+
+      &:hover {
+        @apply text-nuxt-lightgreen transition-colors;
+      }
+    }
+
+    .footer__social-item img {
+      filter: invert(1);
+    }
+  }
+}

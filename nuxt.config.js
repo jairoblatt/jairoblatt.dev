@@ -1,0 +1,44 @@
+export default {
+  target: 'static',
+
+  ssr: true,
+
+  head: {
+    title: 'Jairo Blatt',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' },
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
+
+  css: [
+    '@/assets/scss/dark.scss',
+    '@/assets/scss/main.scss',
+    '@/assets/scss/content.scss',
+  ],
+
+  plugins: [],
+
+  buildModules: [
+    '@nuxt/typescript-build',
+    '@nuxtjs/stylelint-module',
+    '@nuxtjs/tailwindcss',
+  ],
+
+  pageTransition: {
+    name: 'home',
+    mode: '',
+  },
+
+  modules: ['@nuxtjs/pwa', '@nuxt/content'],
+
+  pwa: {
+    manifest: {
+      lang: 'en',
+    },
+  },
+
+  build: {},
+};
