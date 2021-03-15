@@ -5,10 +5,10 @@
       :src="require(`@/static/${switchHandler ? 'sun' : 'sun-active'}.svg`)"
       alt="Darkmode sun icon"
     />
-    <label class="switch switch-color__action">
-      <input type="checkbox" name="color_mode" v-model="switchHandler" />
-      <label for="color_mode" class="switch-color__action-inner"></label>
-    </label>
+    <div class="switch switch-color__action">
+      <input v-model="switchHandler" id="darkMode" type="checkbox" />
+      <label for="darkMode" class="switch-color__action-inner">dark-mode</label>
+    </div>
     <img
       class="switch-icon"
       :src="require(`@/static/${switchHandler ? 'moon-active' : 'moon'}.svg`)"
@@ -59,6 +59,7 @@ export default Vue.extend({
   width: 50px;
   height: 30px;
   background: #e0e0e0;
+  color: #e0e0e0;
   border-radius: 26px;
 }
 
@@ -95,7 +96,7 @@ export default Vue.extend({
 .switch-color__action
   input[type='checkbox']:checked
   + label.switch-color__action-inner {
-  @apply bg-dark-elevatedSurface text-white;
+  @apply bg-dark-elevatedSurface text-white text-dark-elevatedSurface;
 }
 
 .switch-color__action

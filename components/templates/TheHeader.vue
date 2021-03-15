@@ -12,6 +12,7 @@
             :key="`${link.name}-navbar`"
             :to="link.route"
             class="header__nav-item"
+            tag="li"
             :class="{
               'header__nav-item--active': isBlogArticle(link.name),
             }"
