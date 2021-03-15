@@ -35,6 +35,8 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+import { BlogPostTags } from '@/@types/Blog';
+
 export default Vue.extend({
   props: {
     post: {
@@ -43,11 +45,8 @@ export default Vue.extend({
   },
 
   computed: {
-    hasTags() {
-      if (Array.isArray(this.post.tags)) {
-        return this.post.tags;
-      }
-      return [];
+    hasTags(): BlogPostTags | null {
+      return this.post.tags || null;
     },
   },
 });
