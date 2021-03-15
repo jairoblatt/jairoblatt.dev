@@ -27,6 +27,6 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .blog-item__container {
-  @apply container md:px-20 md:px-32 px-3;
+  @apply container md:px-20 md:px-32 px-3 pb-6;
 }
 </style>

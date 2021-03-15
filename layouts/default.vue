@@ -46,8 +46,6 @@ export default Vue.extend({
 
 .layout {
   @apply md:px-10  my-5 lg:px-20 xl:px-80;
-
-  min-height: 200vh;
 }
 
 .home-enter-active,

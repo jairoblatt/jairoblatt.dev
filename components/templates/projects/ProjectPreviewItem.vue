@@ -1,35 +1,34 @@
 <template>
-  <div class="project-preview">
+  <a :href="project.link" target="_blank" class="project-preview">
     <div class="project-preview__content">
       <div class="mb-2">
-        <h2 class="project-preview__title">Testando aqui</h2>
+        <h2 class="project-preview__title">{{ project.title }}</h2>
         <div class="mb-4">
           <p class="project-preview__description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus
-            amet voluptates autem officiis velit perspiciatis unde. Nesciunt ab
-            dicta iusto. Magnam quibusdam impedit atque veritatis enim nihil
-            cupiditate in fuga!
+            {{ project.description }}
           </p>
         </div>
-        <div class="project-preview__tags">
-          <span class="project-preview__tags-item"> Javascript </span>
+        <div v-if="project.tags" class="project-preview__tags">
+          <span
+            v-for="(tag, index) in project.tags"
+            :key="`tag-project-${index}`"
+            class="project-preview__tags-item"
+            >{{ tag }}</span
+          >
         </div>
       </div>
     </div>
 
     <div class="project-preview__image">
-      <img
-        src="https://image.freepik.com/free-vector/gradient-nyepi-illustration_52683-57693.jpg"
-        alt=""
-      />
+      <img :src="require('@/static/projects/' + project.imgUrl)" alt="" />
     </div>
-  </div>
+  </a>
 </template>
 
 <script>
 export default {
   props: {
-    post: {
+    project: {
       type: Object,
       required: true,
     },
@@ -39,9 +38,7 @@ export default {
 
 <style lang="postcss" scoped>
 .project-preview {
-  width: 30%;
-
-  @apply bg-light-surface mx-2 hover:bg-gray-100 transition-colors flex flex-col-reverse mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer;
+  @apply bg-light-surface mx-2 w-full sm:w-2/5 hover:bg-gray-100 transition-colors flex flex-col-reverse mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer;
 }
 
 .project-preview__content {
@@ -66,5 +63,8 @@ export default {
 
 .project-preview__image {
   @apply overflow-hidden  w-full  mb-6 lg:mb-0 rounded flex justify-center;
+}
+.project-preview__image img {
+  @apply object-cover;
 }
 </style>

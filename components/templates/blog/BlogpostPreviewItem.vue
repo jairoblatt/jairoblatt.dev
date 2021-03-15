@@ -121,4 +121,7 @@ export default {
 .blog-post-preview__image {
   @apply w-full lg:w-1/3 mb-6 lg:mb-0 rounded overflow-hidden flex justify-center;
 }
+.blog-post-preview__image img {
+  @apply object-cover;
+}
 </style>
