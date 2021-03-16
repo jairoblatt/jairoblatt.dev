@@ -27,7 +27,9 @@
     "@nuxt/typescript-runtime": "^2.1.0",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.8.3",
-    "nuxt": "^2.14.12"
+    "nuxt": "^2.14.12",
+    "nuxt-i18n": "^6.21.1",
+    "v-clipboard": "^2.2.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

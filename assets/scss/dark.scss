@@ -55,6 +55,15 @@
     }
   }
 
+  // Blog Share
+  .blog-post-share__container {
+    .blog-share__container {
+      @apply bg-dark-surface;
+
+      box-shadow: -2px 0 50px #2c2c2c90;
+    }
+  }
+
   // BlogpostItem component
   .blogpost-item__container {
     @apply text-light-surface;

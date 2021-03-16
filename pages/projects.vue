@@ -38,6 +38,12 @@ export default Vue.extend({
       return arr;
     },
   },
+
+  head() {
+    return {
+      titleTemplate: '%s - ' + this.$t('theHeader.projects'),
+    };
+  },
 });
 </script>
 <style lang="postcss" scoped>

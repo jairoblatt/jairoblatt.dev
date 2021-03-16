@@ -1,6 +1,14 @@
 <template>
-  <Nuxt-link :to="`/blog/${post.slug}`">
-    <div class="blog-post-preview">
+  <div class="blog-post-preview">
+    <div class="blog-post-share__container">
+      <BlogShare :slug="postUrl" />
+    </div>
+
+    <Nuxt-link :to="postUrl">
+      <div class="blog-post-preview__image">
+        <img :src="post.imgUrl" alt="" />
+      </div>
+
       <div class="blog-post-preview__content">
         <div class="mb-2">
           <h2 class="blog-post-preview__title">
@@ -46,28 +54,40 @@
           </div>
         </div>
       </div>
-
-      <div class="blog-post-preview__image">
-        <img :src="post.imgUrl" alt="" />
-      </div>
-    </div>
-  </Nuxt-link>
+    </Nuxt-link>
+  </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
+  components: {
+    BlogShare: () => import('@/components/templates/blog/BlogShare.vue'),
+  },
+
   props: {
     post: {
       type: Object,
       required: true,
     },
   },
-};
+
+  computed: {
+    postUrl(): string {
+      return '/blog/' + this.post.slug;
+    },
+  },
+});
 </script>
 
 <style lang="postcss" scoped>
 .blog-post-preview {
-  @apply bg-light-surface hover:bg-gray-100 transition-colors flex flex-col-reverse lg:flex-row mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer;
+  @apply bg-light-surface hover:bg-gray-100 transition-colors mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer relative;
+}
+
+.blog-post-preview a {
+  @apply flex flex-col-reverse lg:flex-row;
 }
 
 .blog-post-preview__content {
@@ -119,9 +139,17 @@ export default {
 }
 
 .blog-post-preview__image {
-  @apply w-full lg:w-1/3 mb-6 lg:mb-0 rounded overflow-hidden flex justify-center;
+  @apply w-full lg:w-1/3 mb-6 lg:mb-0 mr-10 rounded overflow-hidden flex justify-center;
 }
+
 .blog-post-preview__image img {
   @apply object-cover;
+}
+
+.blog-post-share__container {
+  @apply absolute z-20 top-1/2;
+
+  left: -1rem;
+  transform: translateY(-50%);
 }
 </style>

@@ -30,8 +30,7 @@ export default {
 
   head() {
     return {
-      title: this.post.title,
-      titleTemplate: '%s - Jairo Blatt',
+      titleTemplate: '%s - ' + this.post.title,
       meta: [
         {
           hid: 'description',

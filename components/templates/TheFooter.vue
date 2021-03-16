@@ -11,11 +11,18 @@
       <small>©{{ currentYear }} jairoblatt.dev</small>
 
       <ul class="owner__items">
-        <li v-for="(navigation, index) in navigations" :key="`footer-${index}`">
-          <NuxtLink :to="navigation.route" exact-active-class="owner--active"
-            ><span class="owner__dot">&bullet;</span>
-            {{ navigation.name }}
+        <li>
+          <NuxtLink to="/policies" exact-active-class="owner--active">
+            <span class="owner__dot">&bullet;</span>
+            {{ $t('theFooter.privacyPolicy') }}
           </NuxtLink>
+        </li>
+
+        <li>
+          <button @click="switchLanguage">
+            <span class="owner__dot">&bullet;</span>
+            {{ $t('theFooter.changeLanguage') }}
+          </button>
         </li>
       </ul>
     </div>
@@ -40,6 +47,19 @@ export default Vue.extend({
   computed: {
     currentYear() {
       return new Date().getFullYear() || 2021;
+    },
+  },
+
+  methods: {
+    async switchLanguage() {
+      let switchLocale = 'pt';
+      if (this.$i18n.locale === 'pt') switchLocale = 'en';
+      try {
+        await this.$i18n.setLocale(switchLocale);
+        this.$i18n.setLocaleCookie(switchLocale);
+      } catch (e) {
+        console.error(e);
+      }
     },
   },
 });
@@ -72,8 +92,13 @@ export default Vue.extend({
 .owner__items li {
   @apply cursor-pointer mx-1 md:mx-5 text-xs md:text-sm transition-colors;
 }
+
 .owner__items li:hover {
   @apply text-nuxt-lightgreen transition-colors;
+}
+
+.owner__items li button {
+  @apply outline-none;
 }
 
 .owner--active {

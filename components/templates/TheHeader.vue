@@ -18,7 +18,7 @@
             }"
             exact-active-class="header__nav-item--active"
           >
-            {{ link.name }}
+            {{ $t('theHeader.' + link.name) }}
           </NuxtLink>
         </ul>
       </nav>
@@ -40,15 +40,15 @@ export default Vue.extend({
     onTop: true,
     links: [
       {
-        name: 'Olá',
+        name: 'hi',
         route: '/',
       },
       {
-        name: 'Blog',
+        name: 'blog',
         route: '/blog',
       },
       {
-        name: 'Projetos',
+        name: 'projects',
         route: '/projects',
       },
     ],
@@ -69,7 +69,7 @@ export default Vue.extend({
 
     isBlogArticle(routeName: string): boolean {
       return (
-        !!this.$route?.fullPath?.startsWith('/blog') && routeName === 'Blog'
+        !!this.$route?.fullPath?.startsWith('/blog') && routeName === 'blog'
       );
     },
   },

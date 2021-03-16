@@ -140,7 +140,13 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-export default Vue.extend({});
+export default Vue.extend({
+  head() {
+    return {
+      titleTemplate: '%s - ' + this.$t('theFooter.privacyPolicy'),
+    };
+  },
+});
 </script>
 
 <style lang="postcss" scoped>

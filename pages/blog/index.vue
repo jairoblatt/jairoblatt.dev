@@ -28,6 +28,12 @@ export default Vue.extend({
       posts,
     };
   },
+
+  head() {
+    return {
+      titleTemplate: '%s - ' + this.$t('theHeader.blog'),
+    };
+  },
 });
 </script>
 <style lang="postcss" scoped>
