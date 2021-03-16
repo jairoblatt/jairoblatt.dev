@@ -1,6 +1,8 @@
 <template>
-  <div class="container hi__container">
-    <Bio />
+  <section class="hi__container">
+    <div class="hi-bio">
+      <Bio />
+    </div>
     <!-- <BlogLastestPost /> -->
     <div class="blog-lastest-posts">
       <div class="blog-lastest-posts__title">
@@ -12,7 +14,7 @@
         :post="post"
       />
     </div>
-  </div>
+  </section>
 </template>
 
 <script lang="ts">
@@ -40,12 +42,12 @@ export default Vue.extend({
 });
 </script>
 <style lang="postcss" scoped>
-.hi__container {
+.hi-bio {
   @apply 2xl:px-52 xl:px-12 lg:px-28 md:px-16 sm:px-10 px-5;
 }
 
 .blog-lastest-posts {
-  @apply my-32;
+  @apply my-32 px-5;
 }
 
 .blog-lastest-posts__title {

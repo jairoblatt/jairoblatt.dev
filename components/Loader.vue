@@ -24,17 +24,14 @@
 }
 
 #loader > div {
-  @apply bg-primary-light;
+  @apply bg-primary-light rounded-md px-10;
 
   width: 100%;
 }
 
 #loader > div,
 #loader > div::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+  @apply absolute top-0 left-0 w-full h-full;
 }
 
 #loader > div::before {

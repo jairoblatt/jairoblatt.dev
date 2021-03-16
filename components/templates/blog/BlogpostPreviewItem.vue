@@ -87,7 +87,7 @@ export default Vue.extend({
 }
 
 .blog-post-preview a {
-  @apply flex flex-col-reverse lg:flex-row;
+  @apply flex flex-col lg:flex-row;
 }
 
 .blog-post-preview__content {
@@ -103,19 +103,19 @@ export default Vue.extend({
 }
 
 .blog-post-preview__tags {
-  @apply flex flex-row flex-wrap justify-start mb-2;
+  @apply flex flex-row flex-wrap justify-start my-2;
 }
 
 .blog-post-preview__tags-item {
-  @apply truncate uppercase text-xs tracking-wider font-medium px-2 py-1 rounded-full mr-2 mb-1 border transition-colors;
+  @apply truncate text-xs tracking-wider font-medium px-2 py-1 rounded-full mr-2 mb-1 border transition-colors;
 }
 
 .blog-post-preview__info {
-  @apply flex flex-col lg:flex-row text-sm;
+  @apply flex flex-row text-sm justify-between lg:justify-start items-center;
 }
 
 .info__author {
-  @apply mb-4 lg:mb-0 flex items-center;
+  @apply flex items-center;
 }
 
 .info__author-title {
@@ -123,7 +123,7 @@ export default Vue.extend({
 }
 
 .info__post {
-  @apply flex w-full lg:w-auto items-center justify-between leading-none;
+  @apply flex lg:w-auto items-center justify-between leading-none;
 }
 
 .info__post-dot {
@@ -147,9 +147,8 @@ export default Vue.extend({
 }
 
 .blog-post-share__container {
-  @apply absolute z-20 top-1/2;
+  @apply absolute z-20 sm:top-1/2  ml-1 sm:ml-0 top-32 transform -translate-y-1/2;
 
   left: -1rem;
-  transform: translateY(-50%);
 }
 </style>

@@ -35,7 +35,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { BlogPostTags, BlogPostItem } from '@/@types/Blog';
+import { BlogPostTags } from '@/@types/Blog';
 
 export default Vue.extend({
   props: {
