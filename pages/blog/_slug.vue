@@ -1,6 +1,9 @@
 <template>
   <section class="blog-item__container">
     <BlogpostItem :post="post" />
+    <div class="my-10">
+      <Disqus />
+    </div>
   </section>
 </template>
 <script>
@@ -19,6 +22,7 @@ export default {
 
     return {
       post,
+      slug: params.slug,
     };
   },
 

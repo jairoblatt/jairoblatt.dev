@@ -25,7 +25,12 @@ export default {
     '@/assets/scss/rlt.scss',
   ],
 
-  plugins: [],
+  plugins: [
+    {
+      src: '@/plugins/vue-disqus.js',
+      mode: 'client',
+    },
+  ],
 
   buildModules: [
     '@nuxt/typescript-build',

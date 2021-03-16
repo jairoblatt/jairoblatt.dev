@@ -35,12 +35,13 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import { BlogPostTags } from '@/@types/Blog';
+import { BlogPostTags, BlogPostItem } from '@/@types/Blog';
 
 export default Vue.extend({
   props: {
     post: {
       type: Object,
+      required: true,
     },
   },
 
