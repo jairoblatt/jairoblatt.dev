@@ -1,8 +1,10 @@
 <template>
   <section class="blog-item__container">
     <BlogpostItem :post="post" />
-    <div class="my-10">
-      <Disqus />
+    <div class="py-10">
+      <client-only>
+        <BlogComments />
+      </client-only>
     </div>
   </section>
 </template>
@@ -10,6 +12,7 @@
 export default {
   components: {
     BlogpostItem: () => import('@/components/templates/blog/BlogpostItem.vue'),
+    BlogComments: () => import('@/components/templates/blog/BlogComments.vue'),
   },
 
   async asyncData({ $content, params }) {
@@ -22,7 +25,6 @@ export default {
 
     return {
       post,
-      slug: params.slug,
     };
   },
 
@@ -52,7 +54,7 @@ export default {
         },
         { hid: 'og:image', property: 'og:image', content: this.post.imgUrl },
 
-        // Twitter Card
+        // Twitter
         {
           hid: 'twitter:title',
           name: 'twitter:title',
