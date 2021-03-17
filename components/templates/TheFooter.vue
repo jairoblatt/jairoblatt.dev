@@ -31,19 +31,6 @@
 <script lang="ts">
 import Vue from 'vue';
 export default Vue.extend({
-  data: () => ({
-    navigations: [
-      {
-        name: 'Política de Privacidade',
-        route: '/policies',
-      },
-      {
-        name: 'Termos de uso',
-        route: '/terms',
-      },
-    ],
-  }),
-
   computed: {
     currentYear() {
       return new Date().getFullYear() || 2021;
@@ -57,7 +44,7 @@ export default Vue.extend({
       try {
         await this.$i18n.setLocale(switchLocale);
         this.$i18n.setLocaleCookie(switchLocale);
-        window.location.reload();
+        this.$store.commit('lang/set', switchLocale);
       } catch (e) {
         console.error(e);
       }

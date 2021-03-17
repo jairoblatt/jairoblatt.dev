@@ -8,6 +8,7 @@
   </div>
 </template>
 <script lang="ts">
+import { IContentDocument } from '@nuxt/content/types/content';
 import Vue from 'vue';
 
 export default Vue.extend({
@@ -16,24 +17,35 @@ export default Vue.extend({
       import('@/components/templates/projects/ProjectPreviewItem.vue'),
   },
 
-  async asyncData({ $content, app }) {
-    let projects;
+  data: () => ({
+    projects: [] as IContentDocument[] | IContentDocument,
+  }),
+
+  async fetch() {
     try {
-      const path = `/projects/${app.i18n?.locale}`;
-      projects = await $content(path).fetch();
+      const path = `/projects/${this.$i18n.locale}`;
+      const projects = await this.$content(path).fetch();
+      this.projects = projects || [];
     } catch (e) {
       console.error(e);
     }
-
-    return {
-      projects,
-    };
   },
 
   head() {
     return {
       titleTemplate: '%s - ' + this.$t('theHeader.projects'),
     };
+  },
+
+  // Force content update by locale
+  computed: {
+    lang() {
+      return this.$store.getters['lang/lang'];
+    },
+  },
+
+  watch: {
+    lang: '$fetch',
   },
 });
 </script>

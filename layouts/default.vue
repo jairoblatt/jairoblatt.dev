@@ -3,7 +3,6 @@
     <Loader v-if="!bootstrap" />
     <div v-show="bootstrap" :class="classes">
       <TheHeader />
-
       <div class="layout">
         <Nuxt />
       </div>
@@ -36,6 +35,7 @@ export default Vue.extend({
 
   mounted() {
     this.$nextTick(() => setTimeout(() => (this.bootstrap = true), 1000));
+    this.$store.commit('lang/set', this.$i18n.locale);
   },
 });
 </script>
