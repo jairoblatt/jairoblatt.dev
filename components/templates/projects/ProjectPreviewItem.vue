@@ -62,7 +62,7 @@ export default {
 }
 
 .project-preview__image {
-  @apply overflow-hidden  w-full  mb-6 lg:mb-0 rounded flex justify-center;
+  @apply overflow-hidden w-full mb-6 lg:mb-0 rounded flex justify-center;
 }
 .project-preview__image img {
   @apply object-cover;

@@ -1,6 +1,6 @@
 ---
 title: 'Essa página 🦜'
-description: Foi uma experiência muito legal e  prazerosa construir essa pequena página pois consegui explorar alguns conceitos novos de web.
+description: Apesar de pequena, Foi uma grande experiência construir essa página, com ela consegui explorar e colocar em prática alguns conceitos que vinha estudando.
 imgUrl: jairo-blatt-blog.png
 link: https://github.com/jairoblatt
 tags:

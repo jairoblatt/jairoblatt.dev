@@ -1,6 +1,6 @@
 ---
 title: 'Smart-Bank UI Components'
-description: Let’s build a blazing fast articles and tutorials app using Nuxt and the DEV API, with lazy loading, placeholders, caching and trendy neumorphic design UI.
+description: Template and UI components created for Vue, the project is on my personal github and available to anyone who wants to contribute. 😁
 imgUrl: smart-bank.png
 link: https://github.com/jairoblatt/smart-bank-ui-components
 tags:

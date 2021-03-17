@@ -6,6 +6,11 @@
   </div>
 </template>
 
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({});
+</script>
+
 <style lang="postcss" scoped>
 .preloader {
   @apply overflow-hidden flex justify-center items-center left-0 top-0 right-0 bottom-0;

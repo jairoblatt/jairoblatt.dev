@@ -3,7 +3,6 @@
     <div class="hi-bio">
       <Bio />
     </div>
-    <!-- <BlogLastestPost /> -->
     <div class="blog-lastest-posts">
       <div class="blog-lastest-posts__title">
         <h2>{{ $t('home.latestPosts') }}</h2>

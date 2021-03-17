@@ -20,7 +20,7 @@ module.exports = {
 
   projects: {
     title_1: 'Some',
-    title: 'projects',
+    title_2: 'projects',
     description:
       'Projects that I created and participated in, not everyone could be here, due to force majeure.',
   },
