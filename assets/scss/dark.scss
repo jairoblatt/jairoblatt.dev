@@ -55,6 +55,16 @@
     }
   }
 
+  // Blog Page
+  .section-intro__container {
+    .intro-welcome {
+      h1,
+      p {
+        @apply text-light-surface;
+      }
+    }
+  }
+
   // Blog Share
   .blog-post-share__container {
     .blog-share__container {

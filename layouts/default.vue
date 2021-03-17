@@ -39,12 +39,13 @@ export default Vue.extend({
     },
   },
 
+  // Please remove (this as any), its is just to test;
   mounted() {
-    this.lockScroll();
+    (this as any).lockScroll();
 
     this.$nextTick(() =>
       setTimeout(() => {
-        this.lockScroll(false);
+        (this as any).lockScroll(false);
         this.bootstrap = true;
       }, 1000)
     );

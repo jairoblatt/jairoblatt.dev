@@ -1,6 +1,18 @@
 <template>
   <section class="blog-item__container">
     <BlogpostItem :post="post" />
+
+    <div v-if="hasRecommendeds" class="blog-recommended">
+      <div class="blog-recommended__title">
+        <h2>Recomendados:</h2>
+      </div>
+      <BlogpostPreviewItem
+        v-for="(post, index) in recommendeds"
+        :key="`card-recommended-${index}`"
+        :post="post"
+      />
+    </div>
+
     <div class="py-10">
       <client-only>
         <BlogComments />
@@ -12,19 +24,29 @@
 export default {
   components: {
     BlogpostItem: () => import('@/components/templates/blog/BlogpostItem.vue'),
-    BlogComments: () => import('~/components/templates/blog/BlogComments'),
+    BlogComments: () => import('@/components/templates/blog/BlogComments'),
+    BlogpostPreviewItem: () =>
+      import('@/components/templates/blog/BlogpostPreviewItem.vue'),
   },
 
   async asyncData({ $content, params }) {
-    let post;
+    let post, recommendeds;
     try {
       post = await $content('/articles', params.slug).fetch();
+
+      recommendeds = await $content('/articles')
+        .where({
+          title: { $not: { $eq: post.title } },
+        })
+        .limit(3)
+        .fetch();
     } catch (e) {
       console.error(e);
     }
 
     return {
       post,
+      recommendeds,
     };
   },
 
@@ -77,10 +99,24 @@ export default {
       ],
     };
   },
+
+  computed: {
+    hasRecommendeds() {
+      return this.recommendeds && this.recommendeds.length;
+    },
+  },
 };
 </script>
 <style lang="postcss" scoped>
 .blog-item__container {
   @apply container md:px-20 md:px-32 px-3 pb-6;
+}
+
+.blog-recommended {
+  @apply my-2 pt-10;
+}
+
+.blog-recommended__title {
+  @apply my-10 text-dark-surface text-2xl font-medium;
 }
 </style>

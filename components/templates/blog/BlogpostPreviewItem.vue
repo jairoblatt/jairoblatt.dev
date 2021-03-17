@@ -6,7 +6,10 @@
 
     <Nuxt-link :to="postUrl">
       <div class="blog-post-preview__image">
-        <img :src="post.imgUrl" alt="" />
+        <img
+          :src="require('@/static/blog/' + post.imgUrl)"
+          :alt="`Image blog ${post.title}`"
+        />
       </div>
 
       <div class="blog-post-preview__content">
