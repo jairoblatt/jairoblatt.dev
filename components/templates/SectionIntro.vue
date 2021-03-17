@@ -29,7 +29,7 @@ export default Vue.extend({
 }
 
 .intro-welcome {
-  @apply w-1/3 flex flex-col justify-center;
+  @apply w-1/2 flex flex-col justify-center;
 }
 
 .intro-welcome h1 {
@@ -42,5 +42,19 @@ export default Vue.extend({
 
 .intro-image {
   height: 250px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 520px) {
+  .section-intro__container {
+    @apply items-center;
+  }
+
+  .intro-welcome h1 {
+    @apply text-2xl;
+  }
+
+  .intro-image {
+    height: 180px;
+  }
 }
 </style>

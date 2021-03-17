@@ -2,10 +2,12 @@
   <section class="blog-container">
     <SectionIntro imgUrl="plato.svg">
       <template v-slot:content>
-        <h1><span class="intro--highlight">Bem-vindo </span> ao meu blog</h1>
+        <h1>
+          <span class="intro--highlight">{{ $t('blog.title_1') }} </span>
+          {{ $t('blog.title_2') }}
+        </h1>
         <p>
-          O lugar onde escrevo alguns pensamentos aleatórios e sobre algumas
-          tecnologias que utilizo no dia a dia.
+          {{ $t('blog.description') }}
         </p>
       </template>
     </SectionIntro>

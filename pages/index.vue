@@ -6,7 +6,7 @@
     <!-- <BlogLastestPost /> -->
     <div class="blog-lastest-posts">
       <div class="blog-lastest-posts__title">
-        <h2>Últimos posts:</h2>
+        <h2>{{ $t('home.latestPosts') }}</h2>
       </div>
       <BlogPostPreviewItem
         v-for="(post, index) in posts"

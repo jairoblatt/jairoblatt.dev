@@ -150,8 +150,8 @@ export default Vue.extend({
 }
 
 .blog-post-share__container {
-  @apply absolute z-20 sm:top-1/2  ml-1 sm:ml-0 top-32 transform -translate-y-1/2;
+  @apply absolute z-20 sm:top-1/2  sm:ml-0 top-32 transform -translate-y-1/2;
 
-  left: -1rem;
+  left: -0.6rem;
 }
 </style>

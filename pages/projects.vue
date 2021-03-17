@@ -2,10 +2,12 @@
   <div class="projects__container">
     <SectionIntro imgUrl="woman-greek.svg">
       <template v-slot:content>
-        <h1><span class="intro--highlight">Alguns </span> projetos</h1>
+        <h1>
+          <span class="intro--highlight">{{ $t('projects.title_1') }} </span>
+          {{ $t('projects.title_2') }}
+        </h1>
         <p>
-          Projetos que criei e participei, nem todos puderam estar aqui, por
-          força maior.
+          {{ $t('projects.description') }}
         </p>
       </template>
     </SectionIntro>

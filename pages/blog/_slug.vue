@@ -4,7 +4,7 @@
 
     <div v-if="hasRecommendeds" class="blog-recommended">
       <div class="blog-recommended__title">
-        <h2>Recomendados:</h2>
+        <h2>{{ $t('blog.recommended') }}</h2>
       </div>
       <BlogpostPreviewItem
         v-for="(post, index) in recommendeds"

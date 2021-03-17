@@ -15,10 +15,6 @@
 <script lang="ts">
 import Vue from 'vue';
 
-type Methods = {
-  scrollHandler: () => void;
-};
-
 export default Vue.extend({
   components: {
     TheHeader: () => import('@/components/templates/TheHeader.vue'),
