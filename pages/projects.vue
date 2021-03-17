@@ -5,6 +5,7 @@
       :key="`project-card-${index}`"
       :project="project"
     />
+    <Loader v-show="$fetchState.pending" class="project__preview-loader" />
   </div>
 </template>
 <script lang="ts">
@@ -15,6 +16,7 @@ export default Vue.extend({
   components: {
     ProjecPreviewItem: () =>
       import('@/components/templates/projects/ProjectPreviewItem.vue'),
+    Loader: () => import('@/components/Loader.vue'),
   },
 
   data: () => ({
@@ -51,6 +53,10 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .projects__container {
-  @apply flex flex-wrap justify-center;
+  @apply flex flex-wrap justify-center relative;
+}
+
+.project__preview-loader {
+  @apply absolute bg-light-surface rounded-lg;
 }
 </style>

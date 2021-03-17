@@ -1,24 +1,18 @@
-<template functional>
-  <client-only>
-    <div class="preloader">
-      <div id="loader">
-        <div></div>
-      </div>
+<template>
+  <div class="preloader" v-bind="$attrs">
+    <div id="loader">
+      <div></div>
     </div>
-  </client-only>
+  </div>
 </template>
+
 <style lang="postcss" scoped>
 .preloader {
-  @apply bg-dark-surface overflow-hidden fixed z-50 flex justify-center items-center;
-
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  @apply overflow-hidden flex justify-center items-center left-0 top-0 right-0 bottom-0;
 }
 
 #loader {
-  @apply relative;
+  @apply relative rounded-md overflow-hidden;
 
   background-color: #232635;
   width: 100px;
@@ -26,7 +20,7 @@
 }
 
 #loader > div {
-  @apply bg-primary-light rounded-md px-10;
+  @apply bg-primary-light  px-10;
 
   width: 100%;
 }

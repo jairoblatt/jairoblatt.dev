@@ -1,8 +1,9 @@
 <template>
   <main>
-    <Loader v-if="!bootstrap" />
-    <div v-show="bootstrap" :class="classes">
+    <Loader v-if="!bootstrap" class="bg-dark-surface fixed z-50" />
+    <div :class="classes">
       <TheHeader />
+
       <div class="layout">
         <Nuxt />
       </div>
@@ -13,6 +14,11 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+
+type Methods = {
+  scrollHandler: () => void;
+};
+
 export default Vue.extend({
   components: {
     TheHeader: () => import('@/components/templates/TheHeader.vue'),
@@ -34,8 +40,23 @@ export default Vue.extend({
   },
 
   mounted() {
-    this.$nextTick(() => setTimeout(() => (this.bootstrap = true), 1000));
+    this.lockScroll();
+
+    this.$nextTick(() =>
+      setTimeout(() => {
+        this.lockScroll(false);
+        this.bootstrap = true;
+      }, 1000)
+    );
+
     this.$store.commit('lang/set', this.$i18n.locale);
+  },
+
+  methods: {
+    lockScroll(lock = true) {
+      window.onscroll = () => (lock ? window.scrollTo(0, 0) : {});
+      document.body.classList[lock ? 'add' : 'remove']('overflow-hidden');
+    },
   },
 });
 </script>

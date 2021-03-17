@@ -1,5 +1,9 @@
 <template>
   <a :href="project.link" target="_blank" class="project-preview">
+    <div class="project-preview__image">
+      <img :src="require('@/static/projects/' + project.imgUrl)" alt="" />
+    </div>
+
     <div class="project-preview__content">
       <div class="mb-2">
         <h2 class="project-preview__title">{{ project.title }}</h2>
@@ -18,10 +22,6 @@
         </div>
       </div>
     </div>
-
-    <div class="project-preview__image">
-      <img :src="require('@/static/projects/' + project.imgUrl)" alt="" />
-    </div>
   </a>
 </template>
 
@@ -38,7 +38,7 @@ export default {
 
 <style lang="postcss" scoped>
 .project-preview {
-  @apply bg-light-surface mx-2 w-full sm:w-2/5 hover:bg-gray-100 transition-colors flex flex-col-reverse mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer;
+  @apply bg-light-surface mx-2 w-full sm:w-2/5 hover:bg-gray-100 transition-colors flex flex-col mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer;
 }
 
 .project-preview__content {

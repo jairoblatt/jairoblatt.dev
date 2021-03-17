@@ -7,4 +7,5 @@ tags:
   - Typescript
   - Javascript
   - Nuxt
+  - Mixin
 ---

@@ -1,11 +1,15 @@
 ---
 title: 'Pagcripto'
-description: Let’s build a blazing fast articles and tutorials app using Nuxt and the DEV API, with lazy loading, placeholders, caching and trendy neumorphic design UI.
+description:
+  Pagcripto é uma empresa que atua no mercado de criptomoedas, nesse projeto fiquei responsável por construir e arquitetar
+  o dashboard do usuário e a página institucional.
 imgUrl: pagcripto.png
-link: https://github.com/jairoblatt/smart-bank-ui-components
+link: ''
 tags:
   - Nuxtjs
+  - Vue
   - PWA
   - Typescript
   - Tailwind
+  - API REST
 ---

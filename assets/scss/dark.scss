@@ -79,6 +79,14 @@
     }
   }
 
+  // Project Page
+  .projects__container {
+    .project__preview-loader {
+      @apply bg-dark-surface;
+      // background: $dark-background;
+    }
+  }
+
   // TheFooter component
   .footer__container {
     background: $dark-background !important;

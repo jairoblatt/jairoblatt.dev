@@ -1,11 +1,11 @@
 ---
-title: 'Nuxt screen size mixin'
+title: 'Sabido'
 description: A simple mixin for nuxt to get the browser screen size :)
-imgUrl: nuxt-screen-size-mixin.gif
+imgUrl: sabido.png
 link: https://github.com/jairoblatt/nuxt-screen-size-mixin
 tags:
   - Typescript
-  - Javascript
   - Nuxt
-  - Mixin
+  - PWA
+  - Tailwind
 ---
