@@ -16,15 +16,6 @@
             </span>
           </div>
         </div>
-        <div class="text-sm flex justify-between flex-col sm:flex-row">
-          <div>
-            <!-- <BlogpostAuthor
-              v-for="(author, index) in post.authors"
-              :key="index"
-              :author="author"
-            /> -->
-          </div>
-        </div>
       </div>
       <img class="blogpost-item__image" :src="post.imgUrl" />
     </header>

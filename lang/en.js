@@ -7,6 +7,6 @@ module.exports = {
 
   theFooter: {
     privacyPolicy: 'Privacy Policy',
-    changeLanguage: 'Change language to english',
+    changeLanguage: 'Mudar idioma para português',
   },
 };

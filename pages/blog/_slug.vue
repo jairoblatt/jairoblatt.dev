@@ -12,7 +12,7 @@
 export default {
   components: {
     BlogpostItem: () => import('@/components/templates/blog/BlogpostItem.vue'),
-    BlogComments: () => import('@/components/templates/blog/BlogComments.vue'),
+    BlogComments: () => import('~/components/templates/blog/BlogComments'),
   },
 
   async asyncData({ $content, params }) {

@@ -57,6 +57,7 @@ export default Vue.extend({
       try {
         await this.$i18n.setLocale(switchLocale);
         this.$i18n.setLocaleCookie(switchLocale);
+        window.location.reload();
       } catch (e) {
         console.error(e);
       }

@@ -1,9 +1,11 @@
-<template>
-  <div class="preloader">
-    <div id="loader">
-      <div></div>
+<template functional>
+  <client-only>
+    <div class="preloader">
+      <div id="loader">
+        <div></div>
+      </div>
     </div>
-  </div>
+  </client-only>
 </template>
 <style lang="postcss" scoped>
 .preloader {

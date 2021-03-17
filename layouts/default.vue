@@ -1,14 +1,16 @@
 <template>
-  <span>
+  <main>
     <Loader v-if="!bootstrap" />
     <div v-show="bootstrap" :class="classes">
       <TheHeader />
-      <main class="layout">
+
+      <div class="layout">
         <Nuxt />
-      </main>
+      </div>
+
       <TheFooter />
     </div>
-  </span>
+  </main>
 </template>
 <script lang="ts">
 import Vue from 'vue';
@@ -39,9 +41,7 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .layout-container {
-  @apply transition-colors;
-
-  box-sizing: border-box;
+  @apply transition-colors box-border;
 }
 
 .layout {

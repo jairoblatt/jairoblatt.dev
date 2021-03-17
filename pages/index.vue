@@ -42,12 +42,12 @@ export default Vue.extend({
 });
 </script>
 <style lang="postcss" scoped>
-.hi-bio {
+.hi__container {
   @apply 2xl:px-52 xl:px-12 lg:px-28 md:px-16 sm:px-10 px-5;
 }
 
 .blog-lastest-posts {
-  @apply my-32 px-5;
+  @apply my-32;
 }
 
 .blog-lastest-posts__title {

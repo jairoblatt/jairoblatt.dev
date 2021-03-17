@@ -1,7 +1,7 @@
 <template>
   <div class="projects__container">
     <ProjecPreviewItem
-      v-for="(project, index) in projectsMult"
+      v-for="(project, index) in projects"
       :key="`project-card-${index}`"
       :project="project"
     />
@@ -16,10 +16,11 @@ export default Vue.extend({
       import('@/components/templates/projects/ProjectPreviewItem.vue'),
   },
 
-  async asyncData({ $content }) {
+  async asyncData({ $content, app }) {
     let projects;
     try {
-      projects = await $content('/projects').fetch();
+      const path = `/projects/${app.i18n?.locale}`;
+      projects = await $content(path).fetch();
     } catch (e) {
       console.error(e);
     }
@@ -27,16 +28,6 @@ export default Vue.extend({
     return {
       projects,
     };
-  },
-
-  computed: {
-    projectsMult() {
-      const arr = [];
-      for (let i = 0; i < 6; i++) {
-        arr.push((this as any).projects[Math.round(Math.random())]);
-      }
-      return arr;
-    },
   },
 
   head() {
