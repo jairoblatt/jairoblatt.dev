@@ -16,14 +16,21 @@ export default {
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente voluptates libero soluta vero labore ad suscipit dolorum?',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap',
+      },
+    ],
   },
 
   css: [
     '@/assets/scss/dark.scss',
     '@/assets/scss/main.scss',
     '@/assets/scss/content.scss',
-    '@/assets/scss/rlt.scss',
   ],
 
   plugins: [
@@ -42,7 +49,6 @@ export default {
         iso: 'en-US',
         file: 'en.js',
         name: 'English',
-        domain: 'https://en.jairoblatt.dev',
       },
 
       {
@@ -50,7 +56,6 @@ export default {
         iso: 'pt-BR',
         file: 'pt-BR.js',
         name: 'Português',
-        domain: 'https://jairoblatt.dev',
       },
     ],
 

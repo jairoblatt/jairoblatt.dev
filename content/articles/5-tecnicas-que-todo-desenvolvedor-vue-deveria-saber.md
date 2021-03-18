@@ -2,8 +2,8 @@
 title: '5 ténicas que todo desenvolvedor Vue deveria saber'
 description: 'Nesse artigo listarei as 5 ténicas que acredito que todo desenvolvedor Vue deveria saber, são 5 técnicas bastate útils para
 se utilizar no dia a dia desenvolvendo com Vue.'
-imgUrl: 5-tecnicas-que-todo-desenvolvedor.png
-date: 17 de março, 2021
+imgUrl: '5-tecnicas-que-todo-desenvolvedor.png'
+date: '17 de março, 2021'
 tags:
   - Vue 2
   - Dicas

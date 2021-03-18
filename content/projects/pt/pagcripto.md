@@ -1,10 +1,10 @@
 ---
-title: 'Pagcripto'
+title: Pagcripto
 description:
   Pagcripto é uma empresa que atua no mercado de criptomoedas, nesse projeto fiquei responsável por construir e arquitetar
   o dashboard do usuário e a página institucional.
 imgUrl: pagcripto.png
-link: ''
+link: https://github.com/jairoblatt
 tags:
   - Nuxtjs
   - Vue

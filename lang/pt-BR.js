@@ -14,7 +14,7 @@ module.exports = {
     title_1: 'Bem-vindo',
     title_2: 'ao meu blog',
     description:
-      'O lugar onde escrevo sobre algumas tecnologias que utilizo no ddia a dia',
+      'O lugar onde escrevo sobre algumas tecnologias que utilizo no dia a dia.',
     recommended: 'Recomendados:',
   },
 

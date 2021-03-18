@@ -1,7 +1,7 @@
 ---
 title: 'Entenda tudo sobre decorators'
 description: 'O Decorator é um padrão estrutural que permite adicionar novos comportamentos aos objetos dinamicamente, colocando-os dentro de objetos wrapper especiais.'
-imgUrl: typescript.png
+imgUrl: 'typescript.png'
 date: '2 de janeiro, 2021'
 tags:
   - Decorators

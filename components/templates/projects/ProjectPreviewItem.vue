@@ -1,5 +1,10 @@
 <template>
-  <a :href="project.link" target="_blank" class="project-preview">
+  <a
+    :href="project.link"
+    rel="noopener"
+    target="_blank"
+    class="project-preview"
+  >
     <div class="project-preview__image">
       <img :src="require('@/static/projects/' + project.imgUrl)" alt="" />
     </div>

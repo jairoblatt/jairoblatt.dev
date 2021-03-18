@@ -29,7 +29,7 @@ export default Vue.extend({
 }
 
 .intro-welcome {
-  @apply w-1/2 flex flex-col justify-center;
+  @apply w-1/2 md:w-1/3 flex flex-col justify-center;
 }
 
 .intro-welcome h1 {

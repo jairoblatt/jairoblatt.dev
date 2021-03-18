@@ -11,11 +11,13 @@
         </p>
       </template>
     </SectionIntro>
+
     <ProjecPreviewItem
       v-for="(project, index) in projects"
       :key="`project-card-${index}`"
       :project="project"
     />
+
     <Loader v-show="$fetchState.pending" class="project__preview-loader" />
   </div>
 </template>
@@ -37,7 +39,7 @@ export default Vue.extend({
 
   async fetch() {
     try {
-      const path = `/projects/${this.$i18n.locale}`;
+      const path = `projects/${this.$i18n.locale}`;
       const projects = await this.$content(path).fetch();
       this.projects = projects || [];
     } catch (e) {
@@ -53,7 +55,7 @@ export default Vue.extend({
 
   // Force content update by locale
   computed: {
-    lang() {
+    lang(): string {
       return this.$store.getters['lang/lang'];
     },
   },
