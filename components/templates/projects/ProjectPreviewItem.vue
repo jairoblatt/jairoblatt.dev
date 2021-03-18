@@ -12,11 +12,13 @@
     <div class="project-preview__content">
       <div class="mb-2">
         <h2 class="project-preview__title">{{ project.title }}</h2>
+
         <div class="mb-4">
           <p class="project-preview__description">
             {{ project.description }}
           </p>
         </div>
+
         <div v-if="project.tags" class="project-preview__tags">
           <span
             v-for="(tag, index) in project.tags"
@@ -43,7 +45,7 @@ export default {
 
 <style lang="postcss" scoped>
 .project-preview {
-  @apply bg-light-surface mx-2 w-full sm:w-2/5 hover:bg-gray-100 transition-colors flex flex-col mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer;
+  @apply bg-light-surface mx-2 w-full sm:w-2/5 hover:bg-gray-100 transition-colors flex flex-col justify-between mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer;
 }
 
 .project-preview__content {
@@ -63,13 +65,15 @@ export default {
 }
 
 .project-preview__tags-item {
-  @apply truncate uppercase text-xs tracking-wider font-medium px-2 py-1 rounded-full mr-2 mb-1 border transition-colors;
+  @apply text-xs tracking-wider font-medium px-2 py-1 rounded-full mr-2 mb-1 border transition-colors;
 }
 
 .project-preview__image {
   @apply overflow-hidden w-full mb-6 lg:mb-0 rounded flex justify-center;
 }
 .project-preview__image img {
-  @apply object-cover;
+  @apply object-cover rounded;
+
+  height: 242px;
 }
 </style>

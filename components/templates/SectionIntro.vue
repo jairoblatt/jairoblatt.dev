@@ -25,7 +25,7 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .section-intro__container {
-  @apply container flex justify-center py-10;
+  @apply container flex justify-center pt-6 pb-14;
 }
 
 .intro-welcome {

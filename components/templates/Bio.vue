@@ -1,11 +1,9 @@
 <template>
   <div class="bio__container">
-    <h2>
-      <span class="bio--highlight">Olá!</span> Lorem ipsum dolor sit amet
-      consectetur
-    </h2>
+    <h2><span class="bio--highlight">Olá!</span></h2>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente
+      Meu nome é Jairo Blatt, trabalho como desenvolvedor front-end a Lorem
+      ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente
       voluptates libero soluta vero labore ad suscipit dolorum? Laudantium ullam
       porro autem harum voluptatibus hic eos<span class="bio--highlight">
         voluptates cum repellat</span
@@ -36,11 +34,11 @@
   background: transparent;
 }
 .bio__container h2 {
-  @apply text-4xl pb-10;
+  @apply text-4xl font-bold pb-10;
 }
 
 .bio__container p {
-  @apply text-lg;
+  @apply text-lg font-light;
 }
 
 .bio--highlight {

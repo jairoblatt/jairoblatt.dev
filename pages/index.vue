@@ -45,12 +45,16 @@ export default Vue.extend({
   @apply 2xl:px-52 xl:px-12 lg:px-28 md:px-16 sm:px-10 px-5;
 }
 
+.hi-bio {
+  @apply pt-6 pb-14;
+}
+
 .blog-lastest-posts {
-  @apply my-32;
+  @apply my-7;
 }
 
 .blog-lastest-posts__title {
-  @apply my-4;
+  @apply my-6;
 }
 
 .blog-lastest-posts__title h2 {
