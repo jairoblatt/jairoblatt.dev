@@ -28,7 +28,9 @@
   }
   // inline code snippet
   & code {
-    @apply bg-gray-100 text-red-500;
+    @apply bg-light-surface;
+
+    color: #ff4081;
   }
 
   & pre {
@@ -129,9 +131,8 @@
   }
   // inline code snippet
   & code {
-    @apply bg-gray-800;
-
-    color: #e1e8f5;
+    @apply bg-dark-elevatedSurface;
+    color: #ff4081;
   }
   // code snippet block
   & pre {

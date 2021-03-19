@@ -2,8 +2,7 @@
   <div class="bio__container">
     <h2><span class="bio--highlight">Olá!</span></h2>
     <p>
-      Meu nome é Jairo Blatt, trabalho como desenvolvedor front-end a Lorem
-      ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente
+      A Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente
       voluptates libero soluta vero labore ad suscipit dolorum? Laudantium ullam
       porro autem harum voluptatibus hic eos<span class="bio--highlight">
         voluptates cum repellat</span

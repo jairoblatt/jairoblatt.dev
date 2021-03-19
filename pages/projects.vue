@@ -1,7 +1,7 @@
 <template>
   <div class="projects__container">
-    <SectionIntro imgUrl="woman-greek.svg">
-      <template v-slot:content>
+    <SectionIntro img-url="woman-greek.svg">
+      <template #content>
         <h1>
           <span class="intro--highlight">{{ $t('projects.title_1') }} </span>
           {{ $t('projects.title_2') }}
@@ -18,7 +18,7 @@
       :project="project"
     />
 
-    <Loader v-show="$fetchState.pending" class="project__preview-loader" />
+    <Loader v-show="fetchpending" class="project__preview-loader" />
   </div>
 </template>
 <script lang="ts">
@@ -35,9 +35,12 @@ export default Vue.extend({
 
   data: () => ({
     projects: [] as IContentDocument[] | IContentDocument,
+    fetchpending: true,
   }),
 
   async fetch() {
+    this.fetchpending = true;
+
     try {
       const path = `projects/${this.$i18n.locale}`;
       const projects = await this.$content(path).sortBy('title', 'asc').fetch();
@@ -62,6 +65,11 @@ export default Vue.extend({
 
   watch: {
     lang: '$fetch',
+    fetchpending(payload) {
+      if (payload) {
+        setTimeout(() => (this.fetchpending = false), 1000);
+      }
+    },
   },
 });
 </script>

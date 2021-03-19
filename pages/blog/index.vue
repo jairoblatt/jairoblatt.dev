@@ -1,7 +1,7 @@
 <template>
   <section class="blog-container">
-    <SectionIntro imgUrl="plato.svg">
-      <template v-slot:content>
+    <SectionIntro img-url="plato.svg">
+      <template #content>
         <h1>
           <span class="intro--highlight">{{ $t('blog.title_1') }} </span>
           {{ $t('blog.title_2') }}
@@ -52,6 +52,6 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .blog-container {
-  @apply container mx-auto px-4 relative;
+  @apply container mx-auto px-4 relative h-screen;
 }
 </style>
