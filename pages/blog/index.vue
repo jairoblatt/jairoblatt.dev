@@ -12,11 +12,7 @@
       </template>
     </SectionIntro>
     <div class="blog-items">
-      <BlogspostPreviewItem
-        v-for="(postItem, index) in posts"
-        :key="index"
-        :post="postItem"
-      />
+      <BlogpostPreview :posts="posts" />
     </div>
   </section>
 </template>
@@ -25,8 +21,8 @@
 import Vue from 'vue';
 export default Vue.extend({
   components: {
-    BlogspostPreviewItem: () =>
-      import('@/components/templates/blog/BlogpostPreviewItem.vue'),
+    BlogpostPreview: () =>
+      import('@/components/templates/blog/BlogpostPreview.vue'),
     SectionIntro: () => import('@/components/templates/SectionIntro.vue'),
   },
 

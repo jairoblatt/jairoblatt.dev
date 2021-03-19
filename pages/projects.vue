@@ -18,7 +18,7 @@
       :project="project"
     />
 
-    <Loader v-show="fetchpending" class="project__preview-loader" />
+    <Loader v-show="$fetchState.pending" class="project__preview-loader" />
   </div>
 </template>
 <script lang="ts">
@@ -39,8 +39,6 @@ export default Vue.extend({
   }),
 
   async fetch() {
-    this.fetchpending = true;
-
     try {
       const path = `projects/${this.$i18n.locale}`;
       const projects = await this.$content(path).sortBy('title', 'asc').fetch();
@@ -65,11 +63,6 @@ export default Vue.extend({
 
   watch: {
     lang: '$fetch',
-    fetchpending(payload) {
-      if (payload) {
-        setTimeout(() => (this.fetchpending = false), 1000);
-      }
-    },
   },
 });
 </script>

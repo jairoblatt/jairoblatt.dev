@@ -7,11 +7,7 @@
       <div class="blog-lastest-posts__title">
         <h2>{{ $t('home.latestPosts') }}</h2>
       </div>
-      <BlogPostPreviewItem
-        v-for="(post, index) in posts"
-        :key="'post' + index"
-        :post="post"
-      />
+      <BlogpostPreview :posts="posts" />
     </div>
   </section>
 </template>
@@ -22,8 +18,8 @@ import Vue from 'vue';
 export default Vue.extend({
   components: {
     Bio: () => import('@/components/templates/Bio.vue'),
-    BlogPostPreviewItem: () =>
-      import('@/components/templates/blog/BlogpostPreviewItem.vue'),
+    BlogpostPreview: () =>
+      import('@/components/templates/blog/BlogpostPreview.vue'),
   },
 
   async asyncData({ $content }) {

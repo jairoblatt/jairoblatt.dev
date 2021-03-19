@@ -89,6 +89,21 @@
     }
   }
 
+  // Blogpost preview skeleton
+  .skeleton-box {
+    @apply bg-dark-surface #{!important};
+
+    &::after {
+      background-image: linear-gradient(
+        90deg,
+        rgba(#3a546e, 0) 0,
+        rgba(#3a546e, 0.2) 20%,
+        rgba(#3a546e, 0.5) 60%,
+        rgba(#3a546e, 0)
+      ) !important;
+    }
+  }
+
   // Project Page
   .projects__container {
     .project__preview-loader {
