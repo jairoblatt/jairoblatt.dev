@@ -59,7 +59,7 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .projects__container {
-  @apply flex flex-wrap justify-center relative;
+  @apply flex flex-wrap justify-center relative min-h-screen;
 }
 
 .project__preview-loader {

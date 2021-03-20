@@ -1,5 +1,5 @@
 <template>
-  <div class="preloader" v-bind="$attrs">
+  <div class="preloader">
     <div id="loader">
       <div></div>
     </div>
@@ -8,12 +8,22 @@
 
 <script lang="ts">
 import Vue from 'vue';
-export default Vue.extend({});
+export default Vue.extend({
+  mounted() {
+    window.onscroll = () => window.scrollTo(0, 0);
+    document.body.classList.add('overflow-hidden');
+
+    this.$once('hook:beforeDestroy', () => {
+      window.onscroll = () => {};
+      document.body.classList.remove('overflow-hidden');
+    });
+  },
+});
 </script>
 
 <style lang="postcss" scoped>
 .preloader {
-  @apply overflow-hidden flex justify-center items-center left-0 top-0 right-0 bottom-0;
+  @apply overflow-hidden flex justify-center items-center left-0 top-0 right-0 bottom-0 bg-dark-surface fixed z-50;
 }
 
 #loader {

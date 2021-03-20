@@ -109,7 +109,7 @@ export default {
 </script>
 <style lang="postcss" scoped>
 .blog-item__container {
-  @apply container md:px-20 md:px-32 px-3 pb-6;
+  @apply container md:px-20 md:px-32 px-3 pb-6 min-h-screen;
 }
 
 .blog-recommended {

@@ -1,10 +1,10 @@
 <template>
   <main>
-    <Loader v-if="!bootstrap" class="bg-dark-surface fixed z-50" />
+    <Loader v-if="!bootstrap" />
     <div :class="classes">
       <TheHeader />
 
-      <div class="layout">
+      <div v-show="bootstrap" class="layout">
         <Nuxt />
       </div>
 
@@ -35,25 +35,10 @@ export default Vue.extend({
     },
   },
 
-  // Please remove (this as any), its is just to test;
-  mounted() {
-    (this as any).lockScroll();
-
-    this.$nextTick(() =>
-      setTimeout(() => {
-        (this as any).lockScroll(false);
-        this.bootstrap = true;
-      }, 1000)
-    );
-
+  async mounted() {
+    await this.$nextTick();
+    setTimeout(() => (this.bootstrap = true), 1000);
     this.$store.commit('lang/set', this.$i18n.locale);
-  },
-
-  methods: {
-    lockScroll(lock = true) {
-      window.onscroll = () => (lock ? window.scrollTo(0, 0) : {});
-      document.body.classList[lock ? 'add' : 'remove']('overflow-hidden');
-    },
   },
 });
 </script>
