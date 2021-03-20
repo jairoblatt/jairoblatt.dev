@@ -96,7 +96,18 @@ export default {
     },
   },
 
-  modules: ['@nuxtjs/pwa', '@nuxt/content', 'nuxt-i18n'],
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxt/content',
+    'nuxt-i18n',
+    [
+      'nuxt-lazy-load',
+      {
+        polyfill: true,
+        directiveOnly: true,
+      },
+    ],
+  ],
 
   pwa: {
     manifest: {

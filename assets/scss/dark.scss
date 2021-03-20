@@ -87,6 +87,10 @@
         @apply border-nuxt-lightgreen;
       }
     }
+
+    .post-header-skeleton__container {
+      background: $dark-background;
+    }
   }
 
   // Blogpost preview skeleton

@@ -37,7 +37,7 @@ export default Vue.extend({
 
   methods: {
     loadingHandler() {
-      setTimeout(() => (this.loading = false), 900);
+      setTimeout(() => (this.loading = false), 500);
     },
   },
 });

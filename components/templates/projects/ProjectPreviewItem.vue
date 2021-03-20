@@ -6,7 +6,11 @@
     class="project-preview"
   >
     <div class="project-preview__image">
-      <img :src="require('@/static/projects/' + project.imgUrl)" alt="" />
+      <img
+        :data-src="require('@/static/projects/' + project.imgUrl)"
+        :alt="`Porject preview ${project.title}`"
+        v-lazy-load
+      />
     </div>
 
     <div class="project-preview__content">

@@ -7,8 +7,9 @@
     <Nuxt-link :to="postUrl">
       <div class="blog-post-preview__image">
         <img
-          :src="require('@/static/blog/' + post.imgUrl)"
+          :data-src="require('@/static/blog/' + post.imgUrl)"
           :alt="`Image blog ${post.title}`"
+          v-lazy-load
         />
       </div>
 
