@@ -31,7 +31,7 @@ export default Vue.extend({
 
   async fetch() {
     try {
-      const path = `projects/${this.lang}`;
+      const path = `projects/${this.$i18n.locale}`;
       const projects = await this.$content(path).sortBy('title', 'asc').fetch();
       this.projects = projects || [];
     } catch (e) {
