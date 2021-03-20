@@ -11,14 +11,7 @@
         </p>
       </template>
     </SectionIntro>
-
-    <ProjecPreviewItem
-      v-for="(project, index) in projects"
-      :key="`project-card-${index}`"
-      :project="project"
-    />
-
-    <Loader v-show="$fetchState.pending" class="project__preview-loader" />
+    <ProjectPreview :projects="projects" :key="lang" />
   </div>
 </template>
 <script lang="ts">
@@ -27,20 +20,18 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    ProjecPreviewItem: () =>
-      import('@/components/templates/projects/ProjectPreviewItem.vue'),
     SectionIntro: () => import('@/components/templates/SectionIntro.vue'),
-    Loader: () => import('@/components/Loader.vue'),
+    ProjectPreview: () =>
+      import('@/components/templates/projects/ProjectsPreview.vue'),
   },
 
   data: () => ({
     projects: [] as IContentDocument[] | IContentDocument,
-    fetchpending: true,
   }),
 
   async fetch() {
     try {
-      const path = `projects/${this.$i18n.locale}`;
+      const path = `projects/${this.lang}`;
       const projects = await this.$content(path).sortBy('title', 'asc').fetch();
       this.projects = projects || [];
     } catch (e) {

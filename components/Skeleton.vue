@@ -9,6 +9,7 @@ export default Vue.extend({
     width: String,
     minHeight: String,
     minWidth: String,
+    maxWidth: String,
   },
 
   computed: {
@@ -18,6 +19,7 @@ export default Vue.extend({
         width: this.width,
         minHeight: this.minHeight,
         minWidth: this.minWidth,
+        maxWidth: this.maxWidth,
       };
     },
   },

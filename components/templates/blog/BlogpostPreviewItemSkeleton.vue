@@ -39,7 +39,7 @@
               height="29px"
               width="29px"
             />
-            <Skeleton class="mb-2 rounded-full" width="20%" height="10px" />
+            <Skeleton class="mb-2 rounded-full" width="17%" height="10px" />
           </div>
         </div>
       </div>
