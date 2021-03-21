@@ -23,6 +23,7 @@ export default {
         rel: 'stylesheet',
         href:
           'https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap',
+        async: true,
       },
     ],
   },
@@ -81,7 +82,14 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/robots',
   ],
+
+  robots: {
+    UserAgent: '*',
+    Disallow: '/',
+    CrawlDelay: 10,
+  },
 
   pageTransition: {
     name: 'home',
@@ -110,8 +118,20 @@ export default {
   ],
 
   pwa: {
+    meta: {
+      ogDescription: false,
+      ogTitle: false,
+    },
+    icon: {},
+    dev: true,
     manifest: {
-      lang: 'en',
+      lang: 'pt-br',
+      name: 'Jairo Blatt',
+      short_name: 'Jairo Blatt',
+      theme_color: '#222831',
+      background_color: '#222831',
+      display: 'standalone',
+      orientation: 'portrait',
     },
   },
 
