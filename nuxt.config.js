@@ -16,7 +16,6 @@ export default {
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente voluptates libero soluta vero labore ad suscipit dolorum?',
       },
       {
-        hid: 'robots',
         name: 'robots',
         content: 'noindex',
       },
