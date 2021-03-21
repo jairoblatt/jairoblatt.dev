@@ -15,10 +15,6 @@ export default {
         content:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente voluptates libero soluta vero labore ad suscipit dolorum?',
       },
-      {
-        name: 'robots',
-        content: 'noindex',
-      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
