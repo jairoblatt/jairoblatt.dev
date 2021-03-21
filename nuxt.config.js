@@ -89,6 +89,7 @@ export default {
     UserAgent: '*',
     Disallow: '/',
     CrawlDelay: 10,
+    'x-robots-tag': 'noindex',
   },
 
   pageTransition: {
