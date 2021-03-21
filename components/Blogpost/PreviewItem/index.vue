@@ -1,9 +1,5 @@
 <template>
   <div class="blog-post-preview">
-    <div class="blog-post-share__container">
-      <BlogShare :slug="postUrl" />
-    </div>
-
     <Nuxt-link :to="postUrl">
       <div class="blog-post-preview__image">
         <img
@@ -66,10 +62,6 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  components: {
-    BlogShare: () => import('@/components/Blogpost/Share/index.vue'),
-  },
-
   props: {
     post: {
       type: Object,
@@ -148,11 +140,5 @@ export default Vue.extend({
 
 .blog-post-preview__image img {
   @apply object-cover;
-}
-
-.blog-post-share__container {
-  @apply absolute z-20 sm:top-1/2  sm:ml-0 top-32 transform -translate-y-1/2;
-
-  left: -0.6rem;
 }
 </style>

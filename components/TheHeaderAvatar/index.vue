@@ -15,8 +15,6 @@
 }
 
 .header__avatar img {
-  @apply h-1/4;
-
   border-radius: 30px;
 }
 

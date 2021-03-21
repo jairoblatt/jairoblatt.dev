@@ -47,6 +47,10 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .blog-container {
-  @apply container mx-auto px-4 relative min-h-screen;
+  @apply container mx-auto px-4  relative min-h-screen;
+}
+
+.blog-items {
+  @apply px-2 md:px-12 lg:px-24 xl:px-20 2xl:px-36;
 }
 </style>

@@ -1,10 +1,7 @@
 <template>
   <header class="header" :class="{ 'header--scroll': !onTop }">
     <div class="header__container">
-      <!-- Avatar -->
       <TheHeaderAvatar />
-
-      <!-- Center Navigation -->
       <nav class="header__nav">
         <ul class="header__nav-items">
           <NuxtLink

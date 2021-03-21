@@ -2,7 +2,7 @@
   <div class="footer__container">
     <div class="footer__social-items">
       <div class="footer__social-item">
-        <a href="https://github.com/jairoblatt" target="_blank">
+        <a href="https://github.com/jairoblatt" rel="noopener" target="_blank">
           <img :src="require('@/static/github.svg')" alt="Github Logo" />
         </a>
       </div>
@@ -54,7 +54,7 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .footer__container {
-  @apply py-4 px-2;
+  @apply py-5 mt-6 px-2;
 }
 
 .footer__social-items {
