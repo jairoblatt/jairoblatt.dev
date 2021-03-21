@@ -15,6 +15,11 @@ export default {
         content:
           'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente voluptates libero soluta vero labore ad suscipit dolorum?',
       },
+      {
+        hid: 'robots',
+        name: 'robots',
+        content: 'noindex',
+      },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -89,7 +94,6 @@ export default {
     UserAgent: '*',
     Disallow: '/',
     CrawlDelay: 10,
-    'x-robots-tag': 'noindex',
   },
 
   pageTransition: {
