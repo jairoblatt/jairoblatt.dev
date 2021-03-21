@@ -17,9 +17,9 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    TheHeader: () => import('@/components/templates/TheHeader.vue'),
-    TheFooter: () => import('@/components/templates/TheFooter.vue'),
-    Loader: () => import('@/components/Loader.vue'),
+    TheHeader: () => import('@/components/TheHeader/index.vue'),
+    TheFooter: () => import('@/components/TheFooter/index.vue'),
+    Loader: () => import('@/components/Loader/index.vue'),
   },
 
   data: () => ({

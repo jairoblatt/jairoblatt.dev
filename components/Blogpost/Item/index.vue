@@ -18,8 +18,10 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    BlogpostItemHeader: () => import('./BlogpostItemHeader.vue'),
-    BlogpostItemContent: () => import('./BlospostItemContent.vue'),
+    BlogpostItemHeader: () =>
+      import('@/components/Blogpost/ItemHeader/index.vue'),
+    BlogpostItemContent: () =>
+      import('@/components/Blogpost/ItemContent/index.vue'),
   },
 
   props: {

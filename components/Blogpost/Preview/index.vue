@@ -19,9 +19,10 @@
 import Vue from 'vue';
 export default Vue.extend({
   components: {
-    BlogpostPreviewItem: () => import('./BlogpostPreviewItem.vue'),
+    BlogpostPreviewItem: () =>
+      import('@/components/Blogpost/PreviewItem/index.vue'),
     BlogPostPreviewItemSkeleton: () =>
-      import('./BlogpostPreviewItemSkeleton.vue'),
+      import('@/components/Blogpost/PreviewItemSkeleton/index.vue'),
   },
 
   props: {

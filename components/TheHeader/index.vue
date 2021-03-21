@@ -32,8 +32,8 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    DarkModeSwitch: () => import('./DarkModeSwitch.vue'),
-    TheHeaderAvatar: () => import('./TheHeaderAvatar.vue'),
+    DarkModeSwitch: () => import('@/components/DarkModeSwitch/index.vue'),
+    TheHeaderAvatar: () => import('@/components/TheHeaderAvatar/index.vue'),
   },
 
   data: () => ({

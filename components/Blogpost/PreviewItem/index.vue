@@ -67,7 +67,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    BlogShare: () => import('@/components/templates/blog/BlogShare.vue'),
+    BlogShare: () => import('@/components/Blogpost/Share/index.vue'),
   },
 
   props: {

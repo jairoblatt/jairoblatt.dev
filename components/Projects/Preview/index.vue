@@ -21,8 +21,9 @@ import Vue from 'vue';
 export default Vue.extend({
   components: {
     ProjectPreviewItemSkeleton: () =>
-      import('./ProjectPreviewItemSkeleton.vue'),
-    ProjectPreviewItem: () => import('./ProjectPreviewItem.vue'),
+      import('@/components/Projects/PreviewItemSkeleton/index.vue'),
+    ProjectPreviewItem: () =>
+      import('@/components/Projects/PreviewItem/index.vue'),
   },
 
   data: () => ({

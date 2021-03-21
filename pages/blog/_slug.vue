@@ -23,10 +23,10 @@
 <script>
 export default {
   components: {
-    BlogpostItem: () => import('@/components/templates/blog/BlogpostItem.vue'),
-    BlogComments: () => import('@/components/templates/blog/BlogComments'),
+    BlogpostItem: () => import('@/components/Blogpost/Item/index.vue'),
+    BlogComments: () => import('@/components/Blogpost/Comments/index.ts'),
     BlogpostPreviewItem: () =>
-      import('@/components/templates/blog/BlogpostPreviewItem.vue'),
+      import('@/components/Blogpost/PreviewItem/index.vue'),
   },
 
   async asyncData({ $content, params }) {

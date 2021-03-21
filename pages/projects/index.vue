@@ -20,9 +20,8 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    SectionIntro: () => import('@/components/templates/SectionIntro.vue'),
-    ProjectPreview: () =>
-      import('@/components/templates/projects/ProjectsPreview.vue'),
+    SectionIntro: () => import('@/components/SectionIntro/index.vue'),
+    ProjectPreview: () => import('@/components/Projects/Preview/index.vue'),
   },
 
   data: () => ({

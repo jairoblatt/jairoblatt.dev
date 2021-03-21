@@ -33,7 +33,7 @@ import Vue from 'vue';
 export default Vue.extend({
   components: {
     BlogpostItemHeaderSkeleton: () =>
-      import('./BlogpostItemHeaderSkeleton.vue'),
+      import('@/components/Blogpost/ItemHeaderSkeleton/index.vue'),
   },
 
   data: () => ({

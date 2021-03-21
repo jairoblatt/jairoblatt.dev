@@ -17,9 +17,8 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    Bio: () => import('@/components/templates/Bio.vue'),
-    BlogpostPreview: () =>
-      import('@/components/templates/blog/BlogpostPreview.vue'),
+    Bio: () => import('@/components/Bio/index.vue'),
+    BlogpostPreview: () => import('@/components/Blogpost/Preview/index.vue'),
   },
 
   async asyncData({ $content }) {

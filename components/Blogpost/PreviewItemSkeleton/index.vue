@@ -52,7 +52,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    Skeleton: () => import('@/components/Skeleton.vue'),
+    Skeleton: () => import('@/components/Skeleton/index.vue'),
   },
 });
 </script>
