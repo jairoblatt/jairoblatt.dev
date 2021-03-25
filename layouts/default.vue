@@ -1,16 +1,14 @@
 <template>
-  <main>
+  <div>
     <Loader v-if="!bootstrap" />
     <div :class="classes">
       <TheHeader />
-
-      <div v-show="bootstrap" class="layout">
+      <main v-show="bootstrap" class="layout">
         <Nuxt />
-      </div>
-
+      </main>
       <TheFooter />
     </div>
-  </main>
+  </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';

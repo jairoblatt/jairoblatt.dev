@@ -1,16 +1,16 @@
 <template>
-  <div class="blog-post-preview">
+  <div class="blogpost-preview">
     <a href="#">
-      <div class="blog-post-preview__image">
+      <div class="blogpost-preview__image">
         <Skeleton min-height="220px" min-width="600px" />
       </div>
 
-      <div class="blog-post-preview__content">
+      <div class="blogpost-preview__content">
         <div class="mb-2">
           <Skeleton
             width="100%"
             height="25px"
-            class="blog-post-preview__title"
+            class="blogpost-preview__title"
           />
           <div class="mb-4">
             <Skeleton
@@ -18,21 +18,21 @@
               :key="`skeleton-paragraph-${line}`"
               :width="line == 3 ? '80%' : '100%'"
               height="11px"
-              class="blog-post-preview__description"
+              class="blogpost-preview__description"
             />
           </div>
-          <div class="blog-post-preview__tags">
+          <div class="blogpost-preview__tags">
             <Skeleton
               v-for="tag in 3"
               :key="tag"
               height="21px"
               width="43px"
-              class="blog-post-preview__tags-item"
+              class="blogpost-preview__tags-item"
             />
           </div>
         </div>
 
-        <div class="blog-post-preview__info">
+        <div class="blogpost-preview__info">
           <div class="info__author">
             <Skeleton
               class="inline-block h-6 w-6 rounded-full mr-2"
@@ -58,39 +58,39 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
-.blog-post-preview {
+.blogpost-preview {
   @apply bg-light-surface hover:bg-gray-100 transition-colors mb-8 rounded p-4 sm:p-8 lg:p-4 cursor-pointer relative;
 }
 
-.blog-post-preview a {
+.blogpost-preview a {
   @apply flex flex-col lg:flex-row;
 }
 
-.blog-post-preview__content {
+.blogpost-preview__content {
   @apply w-full lg:w-2/3 flex flex-col justify-between pr-4;
 }
 
-.blog-post-preview__title {
+.blogpost-preview__title {
   @apply mb-4 inline-block leading-tight font-semibold text-2xl md:text-3xl transition-colors rounded-full;
 }
 
-.blog-post-preview__description {
+.blogpost-preview__description {
   @apply transition-colors rounded-full;
 }
 
-.blog-post-preview__tags {
+.blogpost-preview__tags {
   @apply flex flex-row flex-wrap justify-start my-2;
 }
 
-.blog-post-preview__tags-item {
+.blogpost-preview__tags-item {
   @apply truncate text-xs tracking-wider font-medium px-2 py-1 rounded-full mr-2 mb-1 transition-colors;
 }
 
-.blog-post-preview__info {
+.blogpost-preview__info {
   @apply inline-block;
 }
 
-.blog-post-preview__image {
+.blogpost-preview__image {
   @apply w-full lg:w-1/3 mb-6 lg:mb-0 mr-10 rounded overflow-hidden flex justify-center;
 }
 </style>

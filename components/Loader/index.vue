@@ -1,6 +1,6 @@
 <template>
   <div class="preloader">
-    <div id="loader">
+    <div class="loader">
       <div></div>
     </div>
   </div>
@@ -10,13 +10,15 @@
 import Vue from 'vue';
 export default Vue.extend({
   mounted() {
-    window.onscroll = () => window.scrollTo(0, 0);
-    document.body.classList.add('overflow-hidden');
+    this.lockScroll();
+    this.$once('hook:beforeDestroy', () => this.lockScroll(false));
+  },
 
-    this.$once('hook:beforeDestroy', () => {
-      window.onscroll = () => {};
-      document.body.classList.remove('overflow-hidden');
-    });
+  methods: {
+    lockScroll(lock = true) {
+      window.onscroll = () => (lock ? window.scrollTo(0, 0) : {});
+      document.body.classList[lock ? 'add' : 'remove']('overflow-hidden');
+    },
   },
 });
 </script>
@@ -26,7 +28,7 @@ export default Vue.extend({
   @apply overflow-hidden flex justify-center items-center left-0 top-0 right-0 bottom-0 bg-dark-surface fixed z-50;
 }
 
-#loader {
+.loader {
   @apply relative rounded-md overflow-hidden;
 
   background-color: #232635;
@@ -34,18 +36,18 @@ export default Vue.extend({
   height: 10px;
 }
 
-#loader > div {
+.loader > div {
   @apply bg-primary-light  px-10;
 
   width: 100%;
 }
 
-#loader > div,
-#loader > div::before {
+.loader > div,
+.loader > div::before {
   @apply absolute top-0 left-0 w-full h-full;
 }
 
-#loader > div::before {
+.loader > div::before {
   @apply bg-dark-elevatedSurface;
 
   content: '';

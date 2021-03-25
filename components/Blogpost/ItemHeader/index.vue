@@ -1,5 +1,5 @@
 <template>
-  <header class="blogpost-item-header__container">
+  <header class="blogpost-item__header">
     <!-- Loading Skeleton -->
     <BlogpostItemHeaderSkeleton v-if="loading" />
 
@@ -23,8 +23,8 @@
     <img
       v-if="imgUrl"
       class="blogpost-item__image"
-      :data-src="imgUrl"
       v-lazy-load
+      :data-src="imgUrl"
     />
   </header>
 </template>
@@ -35,10 +35,6 @@ export default Vue.extend({
     BlogpostItemHeaderSkeleton: () =>
       import('@/components/Blogpost/ItemHeaderSkeleton/index.vue'),
   },
-
-  data: () => ({
-    loading: true,
-  }),
 
   props: {
     date: {
@@ -69,6 +65,9 @@ export default Vue.extend({
     },
   },
 
+  data: () => ({
+    loading: true,
+  }),
   mounted() {
     setTimeout(() => (this.loading = false), 500);
   },
@@ -76,7 +75,7 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
-.blogpost-item-header__container {
+.blogpost-item__header {
   @apply flex justify-between flex-col mt-12 relative;
 }
 

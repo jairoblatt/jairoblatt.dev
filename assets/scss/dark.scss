@@ -1,6 +1,8 @@
+$dark-1: #222831;
+
 .dark-mode {
   // Layout Default
-  $dark-background: #222831;
+  $dark-background: $dark-1;
 
   @apply transition-colors;
 
@@ -8,7 +10,7 @@
     background: $dark-background !important;
   }
 
-  // TheHeader component
+  // The header component
   .header {
     @apply text-light-surface;
 
@@ -17,19 +19,19 @@
     &.header--scroll {
       box-shadow: none;
     }
-    .header__avatar h3 {
+    .header-avatar h3 {
       @apply text-light-surface;
     }
   }
 
   // Bio component
-  .bio__container p,
+  .bio p,
   h2 {
     @apply text-light-surface;
   }
 
-  // BlogPostPreviewItem component
-  .blog-post-preview,
+  // Blog post and project preview card.
+  .blogpost-preview,
   .project-preview {
     @apply text-light-surface #{!important};
 
@@ -40,11 +42,15 @@
       background: #2f3642 !important;
     }
 
-    .blog-post-preview__tags-item,
+    .blogpost-preview__tag,
     .project-preview__tags-item {
       @apply text-dark-onSurfaceSecondary border-dark-onSurfaceSecondary;
     }
     // background: #1b262c !important;
+  }
+
+  .blogpost-preview-skeleton {
+    background: red;
   }
 
   // Policies Page
@@ -56,8 +62,8 @@
   }
 
   // Blog Page
-  .section-intro__container {
-    .intro-welcome {
+  .section-intro {
+    .section-intro__welcome {
       h1,
       p {
         @apply text-light-surface;
@@ -65,17 +71,8 @@
     }
   }
 
-  // Blog Share
-  .blog-post-share__container {
-    .blog-share__container {
-      @apply bg-dark-surface;
-
-      box-shadow: -2px 0 50px #2c2c2c90;
-    }
-  }
-
   // BlogpostItem component
-  .blogpost-item__container {
+  .blogpost-item {
     @apply text-light-surface;
 
     .blogpost-item__title {
@@ -88,12 +85,12 @@
       }
     }
 
-    .post-header-skeleton__container {
+    .blogpost-header-skeleton {
       background: $dark-background;
     }
   }
 
-  // Blogpost preview skeleton
+  // Skeleton
   .skeleton-box {
     @apply bg-dark-surface #{!important};
 
@@ -117,10 +114,10 @@
   }
 
   // TheFooter component
-  .footer__container {
+  .footer {
     background: $dark-background !important;
-    .footer__social-owner li,
-    .footer__social-owner small {
+    .footer__owner li,
+    .footer__owner small {
       @apply text-light-onSurfaceSecondary;
 
       &:hover {

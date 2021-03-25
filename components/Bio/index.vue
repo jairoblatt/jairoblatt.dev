@@ -1,5 +1,5 @@
 <template>
-  <div class="bio__container">
+  <div class="bio">
     <h2><span class="bio--highlight">Olá!</span></h2>
     <p>
       A Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente
@@ -27,16 +27,17 @@
   </div>
 </template>
 <style lang="postcss" scoped>
-.bio__container {
+.bio {
   @apply font-medium text-dark-elevatedSurface;
 
   background: transparent;
 }
-.bio__container h2 {
+
+.bio h2 {
   @apply text-4xl font-bold pb-10;
 }
 
-.bio__container p {
+.bio p {
   @apply text-lg font-light;
 }
 

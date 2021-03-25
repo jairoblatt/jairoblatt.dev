@@ -1,13 +1,13 @@
 <template>
-  <div class="section-intro__container">
-    <div class="intro-welcome">
+  <div class="section-intro">
+    <div class="section-intro__welcome">
       <slot name="content"></slot>
     </div>
 
     <img
       v-if="imgUrl"
       :src="require('@/static/' + imgUrl)"
-      class="intro-image"
+      class="section-intro__image"
       alt="Pato image"
     />
   </div>
@@ -24,15 +24,15 @@ export default Vue.extend({
 });
 </script>
 <style lang="postcss" scoped>
-.section-intro__container {
+.section-intro {
   @apply container flex justify-center pt-6 pb-14;
 }
 
-.intro-welcome {
+.section-intro__welcome {
   @apply w-1/2 md:w-1/3 flex flex-col justify-center;
 }
 
-.intro-welcome h1 {
+.section-intro__welcome h1 {
   @apply text-dark-surface font-bold text-4xl mb-3;
 }
 
@@ -40,20 +40,20 @@ export default Vue.extend({
   @apply text-nuxt-lightgreen;
 }
 
-.intro-image {
+.section-intro__image {
   height: 250px;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 520px) {
-  .section-intro__container {
+  .section-intro {
     @apply items-center;
   }
 
-  .intro-welcome h1 {
+  .section-intro__welcome h1 {
     @apply text-2xl;
   }
 
-  .intro-image {
+  .section-intro__image {
     height: 180px;
   }
 }

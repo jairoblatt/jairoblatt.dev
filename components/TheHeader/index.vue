@@ -3,17 +3,17 @@
     <div class="header__container">
       <TheHeaderAvatar />
       <nav class="header__nav">
-        <ul class="header__nav-items">
+        <ul class="nav__items">
           <NuxtLink
             v-for="link in links"
             :key="`${link.name}-navbar`"
             :to="link.route"
-            class="header__nav-item"
+            class="nav__item"
             tag="li"
             :class="{
-              'header__nav-item--active': isBlogArticle(link.name),
+              'nav__item--active': isBlogArticle(link.name),
             }"
-            exact-active-class="header__nav-item--active"
+            exact-active-class="nav__item--active"
           >
             {{ $t('theHeader.' + link.name) }}
           </NuxtLink>
@@ -90,15 +90,15 @@ export default Vue.extend({
   @apply lg:flex lg:pt-1 xl:pt-0 mx-auto w-3/6 lg:w-max;
 }
 
-.header__nav-items {
+.nav__items {
   @apply flex text-center justify-between mr-4;
 }
 
-.header__nav-item {
+.nav__item {
   @apply xl:px-4 lg:py-0 lg:px-2 py-2 md:text-lg text-sm cursor-pointer hover:text-nuxt-lightgreen transition-colors font-semibold;
 }
 
-.header__nav-item--active {
+.nav__item--active {
   @apply text-nuxt-lightgreen;
 }
 </style>

@@ -1,31 +1,24 @@
 <template>
-  <div class="switch__container">
+  <div class="switch">
     <img
-      class="switch-icon"
+      class="switch__icon"
       :src="require(`@/static/${switchHandler ? 'sun' : 'sun-active'}.svg`)"
       alt="Darkmode sun icon"
     />
-    <div class="switch switch-color__action">
-      <input v-model="switchHandler" id="darkMode" type="checkbox" />
-      <label for="darkMode" class="switch-color__action-inner">dark-mode</label>
+    <div class="switch__dark-mode">
+      <input id="darkMode" v-model="switchHandler" type="checkbox" />
+      <label for="darkMode" class="switch__dark-mode-inner">dark-mode</label>
     </div>
     <img
-      class="switch-icon"
+      class="switch__icon"
       :src="require(`@/static/${switchHandler ? 'moon-active' : 'moon'}.svg`)"
-      alt="Darkmode sun icon"
+      alt="Darkmode moon icon"
     />
   </div>
 </template>
 <script lang="ts">
 import Vue from 'vue';
 export default Vue.extend({
-  mounted() {
-    const darkmodeStorage = localStorage.getItem('dark-mode');
-    if (typeof darkmodeStorage === 'string') {
-      this.switchHandler = JSON.parse(darkmodeStorage);
-    }
-  },
-
   computed: {
     switchHandler: {
       set(payload: boolean) {
@@ -38,22 +31,29 @@ export default Vue.extend({
       },
     },
   },
+
+  mounted() {
+    const darkmodeStorage = localStorage.getItem('dark-mode');
+    if (typeof darkmodeStorage === 'string') {
+      this.switchHandler = JSON.parse(darkmodeStorage);
+    }
+  },
 });
 </script>
 <style lang="postcss" scoped>
-.switch__container {
+.switch {
   @apply align-middle text-center flex items-center;
 }
 
-.switch-color__action {
+.switch__dark-mode {
   @apply mx-2 relative inline-block;
 }
 
-.switch-icon {
+.switch__icon {
   height: 15.3px;
 }
 
-.switch-color__action > label.switch-color__action-inner {
+.switch__dark-mode > label.switch__dark-mode-inner {
   @apply m-0 overflow-hidden block relative transition-all ease-linear duration-300;
 
   width: 50px;
@@ -63,7 +63,7 @@ export default Vue.extend({
   border-radius: 26px;
 }
 
-.switch-color__action > label.switch-color__action-inner::before {
+.switch__dark-mode > label.switch__dark-mode-inner::before {
   @apply absolute font-medium;
 
   content: attr(data-on);
@@ -71,7 +71,7 @@ export default Vue.extend({
   right: 20px;
 }
 
-.switch-color__action > label.switch-color__action-inner::after {
+.switch__dark-mode > label.switch__dark-mode-inner::after {
   @apply absolute text-center transition-all duration-300 ease-linear  bg-white;
 
   content: attr(data-off);
@@ -84,7 +84,7 @@ export default Vue.extend({
   padding: 5px 0;
 }
 
-.switch-color__action input[type='checkbox'] {
+.switch__dark-mode input[type='checkbox'] {
   @apply cursor-pointer opacity-0 absolute z-10 m-0;
 
   top: 0;
@@ -93,24 +93,24 @@ export default Vue.extend({
   height: 100%;
 }
 
-.switch-color__action
+.switch__dark-mode
   input[type='checkbox']:checked
-  + label.switch-color__action-inner {
+  + label.switch__dark-mode-inner {
   @apply bg-dark-elevatedSurface text-white text-dark-elevatedSurface;
 }
 
-.switch-color__action
+.switch__dark-mode
   input[type='checkbox']:checked
-  + label.switch-color__action-inner::after {
+  + label.switch__dark-mode-inner::after {
   @apply bg-nuxt-lightgreen;
 
   content: attr(data-on);
   left: 24px;
 }
 
-.switch-color__action
+.switch__dark-mode
   input[type='checkbox']:checked
-  + label.switch-color__action-inner::before {
+  + label.switch__dark-mode-inner::before {
   @apply right-auto;
 
   content: attr(data-off);

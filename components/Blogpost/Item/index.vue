@@ -1,5 +1,5 @@
 <template>
-  <article class="blogpost-item__container">
+  <article class="blogpost-item">
     <BlogpostItemHeader
       :img-url="post.imgUrl"
       :title="post.title"
@@ -8,9 +8,7 @@
       :tags="post.tags"
     />
 
-    <div class="mt-12">
-      <BlogpostItemContent :post="post" />
-    </div>
+    <BlogpostItemContent :post="post" />
   </article>
 </template>
 <script lang="ts">
@@ -34,7 +32,7 @@ export default Vue.extend({
 </script>
 
 <style lang="postcss" scoped>
-.blogpost-item__container {
+.blogpost-item {
   @apply px-2;
 }
 </style>

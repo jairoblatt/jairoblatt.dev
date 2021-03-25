@@ -1,6 +1,6 @@
 <template functional>
   <client-only>
-    <div class="header__avatar">
+    <div class="header-avatar">
       <img
         :src="require('@/static/avatar-header.png')"
         alt="Jairo Blatt avatar"
@@ -10,15 +10,15 @@
   </client-only>
 </template>
 <style lang="postcss" scoped>
-.header__avatar {
+.header-avatar {
   @apply relative items-center cursor-pointer hidden sm:flex;
 }
 
-.header__avatar img {
+.header-avatar img {
   border-radius: 30px;
 }
 
-.header__avatar h3 {
+.header-avatar h3 {
   @apply text-dark-surface font-bold ml-2 md:text-lg text-sm;
 }
 </style>

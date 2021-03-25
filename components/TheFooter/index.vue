@@ -1,5 +1,5 @@
 <template>
-  <div class="footer__container">
+  <div class="footer">
     <div class="footer__social-items">
       <div class="footer__social-item">
         <a href="https://github.com/jairoblatt" rel="noopener" target="_blank">
@@ -7,7 +7,7 @@
         </a>
       </div>
     </div>
-    <div class="footer__social-owner">
+    <div class="footer__owner">
       <small>©{{ currentYear }} jairoblatt.dev</small>
 
       <ul class="owner__items">
@@ -39,8 +39,7 @@ export default Vue.extend({
 
   methods: {
     async switchLanguage() {
-      let switchLocale = 'pt';
-      if (this.$i18n.locale === 'pt') switchLocale = 'en';
+      const switchLocale = this.$i18n.locale === 'pt' ? 'en' : 'pt';
       try {
         await this.$i18n.setLocale(switchLocale);
         this.$i18n.setLocaleCookie(switchLocale);
@@ -53,7 +52,7 @@ export default Vue.extend({
 });
 </script>
 <style lang="postcss" scoped>
-.footer__container {
+.footer {
   @apply py-5 mt-6 px-2;
 }
 
@@ -69,7 +68,7 @@ export default Vue.extend({
   height: 37.33px;
 }
 
-.footer__social-owner {
+.footer__owner {
   @apply flex justify-center items-center mt-4;
 }
 
