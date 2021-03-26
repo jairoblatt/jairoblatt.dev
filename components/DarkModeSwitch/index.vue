@@ -22,12 +22,12 @@ export default Vue.extend({
   computed: {
     switchHandler: {
       set(payload: boolean) {
-        this.$store.commit('darkmode/set', payload);
+        this.$store.commit('navigation/SET_DARKMODE', payload);
         localStorage.setItem('dark-mode', JSON.stringify(payload));
       },
 
       get(): boolean {
-        return this.$store.getters['darkmode/has'];
+        return this.$store.getters['navigation/darkMode'];
       },
     },
   },

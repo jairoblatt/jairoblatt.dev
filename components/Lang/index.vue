@@ -43,7 +43,7 @@ export default Vue.extend({
         try {
           await this.$i18n.setLocale(code);
           this.$i18n.setLocaleCookie(code);
-          this.$store.commit('lang/set', code);
+          this.$store.commit('navigation/SET_LANG', code);
         } catch (e) {
           console.error(e);
         }

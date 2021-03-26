@@ -47,7 +47,7 @@ export default Vue.extend({
   // Force content update by locale
   computed: {
     lang(): string {
-      return this.$store.getters['lang/lang'];
+      return this.$store.getters['navigation/lang'];
     },
   },
 

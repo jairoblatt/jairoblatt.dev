@@ -28,7 +28,7 @@ export default Vue.extend({
     classes() {
       return {
         'layout-container': true,
-        'dark-mode': this.$store.getters['darkmode/has'],
+        'dark-mode': this.$store.getters['navigation/darkMode'],
       };
     },
   },
@@ -36,7 +36,7 @@ export default Vue.extend({
   async mounted() {
     await this.$nextTick();
     setTimeout(() => (this.bootstrap = true), 1000);
-    this.$store.commit('lang/set', this.$i18n.locale);
+    this.$store.commit('navigation/SET_LANG', this.$i18n.locale);
   },
 });
 </script>

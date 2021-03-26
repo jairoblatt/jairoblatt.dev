@@ -6,12 +6,12 @@
       </template>
       <template #items>
         <div class="settings__expand">
-          <div
-            v-for="component in components"
-            :key="component.name"
-            class="expand__item"
-          >
-            <component :is="component" />
+          <div class="expand__item">
+            <DarkModeSwitch />
+          </div>
+
+          <div class="expand__item">
+            <Lang />
           </div>
         </div>
       </template>
@@ -20,22 +20,20 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
-import DarkModeSwitch from '@/components/DarkModeSwitch/index.vue';
-import Lang from '@/components/Lang/index.vue';
 
 export default Vue.extend({
   components: {
     MenuExpand: () => import('@/components/MenuExpand/index.vue'),
     Icon: () => import('@/components/Icon/index.vue'),
+    DarkModeSwitch: () => import('@/components/DarkModeSwitch/index.vue'),
+    Lang: () => import('@/components/Lang/index.vue'),
   },
-
-  data: () => ({
-    components: [DarkModeSwitch, Lang],
-  }),
 
   computed: {
     settingsIcon() {
-      return this.$store.getters['darkmode/has'] ? 'settings-dark' : 'settings';
+      return this.$store.getters['navigation/darkMode']
+        ? 'settings-dark'
+        : 'settings';
     },
   },
 });
