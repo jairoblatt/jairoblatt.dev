@@ -3,11 +3,10 @@
     <MenuExpand ref="menuExpand">
       <template v-slot:selected="{ isOpen }">
         <span> {{ $i18n.localeProperties.name }}</span>
-        <img
+        <Icon
+          icon="arrow"
           class="lang__toggle__icon"
           :class="{ 'lang__toggle__icon--down': isOpen }"
-          :src="require('@/static/arrow.svg')"
-          alt="Arrow icon"
         />
       </template>
       <template #items>
@@ -35,6 +34,7 @@ import MenuExpand, { IMenuExpand } from '@/components/MenuExpand/index.vue';
 export default Vue.extend({
   components: {
     MenuExpand,
+    Icon: () => import('@/components/Icon/index.vue'),
   },
 
   methods: {

@@ -1,10 +1,6 @@
 <template>
   <div class="menu-expand">
-    <button
-      class="menu-expand__toggle"
-      :class="{ 'menu-expand__toggle--hover': hover }"
-      @click="isOpen = !isOpen"
-    >
+    <button :class="expandToggleClasses" @click="isOpen = !isOpen">
       <slot name="selected" :is-open="isOpen" />
     </button>
 
@@ -25,11 +21,22 @@ const MenuExpand = Vue.extend({
       type: Boolean,
       default: true,
     },
+    icon: Boolean,
   },
 
   data: () => ({
     isOpen: false,
   }),
+
+  computed: {
+    expandToggleClasses() {
+      return {
+        'menu-expand__toggle': true,
+        'menu-expand__toggle--hover': this.hover,
+        'menu-expand__toggle--icon': this.icon,
+      };
+    },
+  },
 
   mounted() {
     document.addEventListener('click', this.clickElementHandler);
@@ -55,7 +62,6 @@ export type IMenuExpand = InstanceType<typeof MenuExpand>;
 $border-radius: 7px;
 
 .menu-expand {
-  min-width: 160px;
   height: 40px;
   position: relative;
   display: inline-block;
@@ -63,8 +69,8 @@ $border-radius: 7px;
 
   .menu-expand__toggle {
     color: #636b6f;
+    padding: 10px;
     min-width: 160px;
-    padding: 10px 20px 10px 10px;
     text-transform: none;
     font-weight: 300;
     margin-bottom: 7px;
@@ -80,6 +86,10 @@ $border-radius: 7px;
     align-items: center;
     outline: none;
     cursor: pointer;
+  }
+
+  .menu-expand__toggle--icon {
+    min-width: auto;
   }
 
   .menu-expand__toggle--hover:hover {

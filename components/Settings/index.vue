@@ -1,20 +1,17 @@
 <template>
   <div class="settings">
-    <MenuExpand :hover="false">
+    <MenuExpand :hover="false" icon>
       <template #selected>
-        <img
-          class="settings__icon"
-          :src="require('@/static/' + settingsIcon)"
-          alt=""
-        />
+        <Icon :icon="settingsIcon" class="settings__icon" />
       </template>
       <template #items>
         <div class="settings__expand">
-          <div class="expand__item">
-            <DarkModeSwitch />
-          </div>
-          <div class="expand__item">
-            <Lang />
+          <div
+            v-for="component in components"
+            :key="component.name"
+            class="expand__item"
+          >
+            <component :is="component" />
           </div>
         </div>
       </template>
@@ -23,19 +20,22 @@
 </template>
 <script lang="ts">
 import Vue from 'vue';
+import DarkModeSwitch from '@/components/DarkModeSwitch/index.vue';
+import Lang from '@/components/Lang/index.vue';
 
 export default Vue.extend({
   components: {
-    DarkModeSwitch: () => import('@/components/DarkModeSwitch/index.vue'),
-    Lang: () => import('@/components/Lang/index.vue'),
     MenuExpand: () => import('@/components/MenuExpand/index.vue'),
+    Icon: () => import('@/components/Icon/index.vue'),
   },
+
+  data: () => ({
+    components: [DarkModeSwitch, Lang],
+  }),
 
   computed: {
     settingsIcon() {
-      return this.$store.getters['darkmode/has']
-        ? 'settings-dark.svg'
-        : 'settings.svg';
+      return this.$store.getters['darkmode/has'] ? 'settings-dark' : 'settings';
     },
   },
 });
@@ -47,6 +47,7 @@ export default Vue.extend({
 
 .settings__icon {
   height: 20px;
+  align-self: flex-end;
 }
 
 .settings__btn--mounted {
