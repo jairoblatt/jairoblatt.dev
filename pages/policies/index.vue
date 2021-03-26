@@ -159,10 +159,10 @@ export default Vue.extend({
 }
 
 .policies__container-text--highlight {
-  @apply text-nuxt-lightgreen font-medium cursor-pointer transition-colors;
+  @apply text-secondary-lightgreen font-medium cursor-pointer transition-colors;
 }
 
 .policies__container-text--highlight:hover {
-  @apply text-nuxt-green transition-colors;
+  @apply text-secondary-green transition-colors;
 }
 </style>

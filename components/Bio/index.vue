@@ -42,6 +42,6 @@
 }
 
 .bio--highlight {
-  @apply text-nuxt-lightgreen;
+  @apply text-secondary-lightgreen;
 }
 </style>

@@ -19,7 +19,9 @@
           </NuxtLink>
         </ul>
       </nav>
-      <DarkModeSwitch />
+      <div class="header__settings">
+        <Settings />
+      </div>
     </div>
   </header>
 </template>
@@ -29,8 +31,8 @@ import Vue from 'vue';
 
 export default Vue.extend({
   components: {
-    DarkModeSwitch: () => import('@/components/DarkModeSwitch/index.vue'),
     TheHeaderAvatar: () => import('@/components/TheHeaderAvatar/index.vue'),
+    Settings: () => import('@/components/Settings/index.vue'),
   },
 
   data: () => ({
@@ -95,10 +97,18 @@ export default Vue.extend({
 }
 
 .nav__item {
-  @apply xl:px-4 lg:py-0 lg:px-2 py-2 md:text-lg text-sm cursor-pointer hover:text-nuxt-lightgreen transition-colors font-semibold;
+  @apply xl:px-4 lg:py-0 lg:px-2 py-2 md:text-lg text-sm cursor-pointer hover:text-secondary-lightgreen transition-colors font-semibold;
 }
 
 .nav__item--active {
-  @apply text-nuxt-lightgreen;
+  @apply text-secondary-lightgreen;
+}
+
+.header__settings {
+  @apply inline-flex;
+}
+
+.settings__item {
+  @apply ml-5;
 }
 </style>

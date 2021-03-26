@@ -37,7 +37,7 @@ export default Vue.extend({
 }
 
 .intro--highlight {
-  @apply text-nuxt-lightgreen;
+  @apply text-secondary-lightgreen;
 }
 
 .section-intro__image {

@@ -12,17 +12,17 @@
   }
 
   & a {
-    @apply text-nuxt-lightgreen;
+    @apply text-secondary-lightgreen;
 
     &:hover {
       @apply underline;
     }
 
     & code {
-      @apply text-nuxt-lightgreen;
+      @apply text-secondary-lightgreen;
 
       &:hover {
-        @apply text-nuxt-green;
+        @apply text-secondary-green;
       }
     }
   }
@@ -115,17 +115,17 @@
   }
 
   & a {
-    @apply text-nuxt-lightgreen;
+    @apply text-secondary-lightgreen;
 
     &:hover {
       @apply underline;
     }
 
     & code {
-      @apply text-nuxt-lightgreen;
+      @apply text-secondary-lightgreen;
 
       &:hover {
-        @apply text-nuxt-green;
+        @apply text-secondary-green;
       }
     }
   }
@@ -372,7 +372,7 @@
     @apply list-inside py-1 pl-1;
 
     & li {
-      @apply py-2 text-nuxt-green;
+      @apply py-2 text-secondary-green;
     }
 
     & ul,

@@ -17,13 +17,6 @@
             {{ $t('theFooter.privacyPolicy') }}
           </NuxtLink>
         </li>
-
-        <li>
-          <button @click="switchLanguage">
-            <span class="owner__dot">&bullet;</span>
-            {{ $t('theFooter.changeLanguage') }}
-          </button>
-        </li>
       </ul>
     </div>
   </div>
@@ -34,19 +27,6 @@ export default Vue.extend({
   computed: {
     currentYear() {
       return new Date().getFullYear() || 2021;
-    },
-  },
-
-  methods: {
-    async switchLanguage() {
-      const switchLocale = this.$i18n.locale === 'pt' ? 'en' : 'pt';
-      try {
-        await this.$i18n.setLocale(switchLocale);
-        this.$i18n.setLocaleCookie(switchLocale);
-        this.$store.commit('lang/set', switchLocale);
-      } catch (e) {
-        console.error(e);
-      }
     },
   },
 });
@@ -81,7 +61,7 @@ export default Vue.extend({
 }
 
 .owner__items li:hover {
-  @apply text-nuxt-lightgreen transition-colors;
+  @apply text-secondary-lightgreen transition-colors;
 }
 
 .owner__items li button {
@@ -89,6 +69,6 @@ export default Vue.extend({
 }
 
 .owner--active {
-  @apply text-nuxt-lightgreen;
+  @apply text-secondary-lightgreen;
 }
 </style>

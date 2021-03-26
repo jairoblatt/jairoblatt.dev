@@ -12,8 +12,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content:
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere sapiente voluptates libero soluta vero labore ad suscipit dolorum?',
+        content: 'Lugar onde compartilho algumas coisas legais :)',
       },
     ],
     link: [

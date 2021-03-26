@@ -42,7 +42,7 @@ export default Vue.extend({
 </script>
 <style lang="postcss" scoped>
 .switch {
-  @apply align-middle text-center flex items-center;
+  @apply align-middle text-center flex items-center justify-center;
 }
 
 .switch__dark-mode {
@@ -102,7 +102,7 @@ export default Vue.extend({
 .switch__dark-mode
   input[type='checkbox']:checked
   + label.switch__dark-mode-inner::after {
-  @apply bg-nuxt-lightgreen;
+  @apply text-secondary-lightgreen;
 
   content: attr(data-on);
   left: 24px;
