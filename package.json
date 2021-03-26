@@ -30,8 +30,7 @@
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.21.1",
-    "nuxt-lazy-load": "^1.2.5",
-    "v-clipboard": "^2.2.3"
+    "nuxt-lazy-load": "^1.2.5"
   },
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",

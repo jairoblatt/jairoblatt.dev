@@ -12,7 +12,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Lugar onde compartilho algumas coisas legais :)',
+        content: 'Um Lugar onde compartilho algumas coisas legais :)',
       },
     ],
     link: [
@@ -33,12 +33,7 @@ export default {
     '@/assets/scss/content.scss',
   ],
 
-  plugins: [
-    {
-      src: '@/plugins/v-clipboard.js',
-      mode: 'client',
-    },
-  ],
+  plugins: [],
 
   i18n: {
     strategy: 'no_prefix',
