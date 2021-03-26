@@ -1,11 +1,7 @@
 <template>
   <div class="mt-12">
     <Skeleton v-if="contentLoading" height="50vh" width="100%" />
-    <NuxtContent
-      v-show="!contentLoading"
-      :document="post"
-      @hook:mounted="loadingHandler"
-    />
+    <NuxtContent v-show="!contentLoading" :document="post" />
   </div>
 </template>
 <script lang="ts">
@@ -26,10 +22,8 @@ export default Vue.extend({
     },
   },
 
-  methods: {
-    loadingHandler() {
-      setTimeout(() => (this.contentLoading = false), 500);
-    },
+  mounted() {
+    setTimeout(() => (this.contentLoading = false), 500);
   },
 });
 </script>
