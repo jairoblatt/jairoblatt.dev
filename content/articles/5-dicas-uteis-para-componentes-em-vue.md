@@ -1,5 +1,5 @@
 ---
-title: '5 dicas úteis para componentes em Vue'
+title: '5 dicas para desenvolver bons componentes em Vue'
 description: 'Nesse pequeno artigo listarei 5 dicas e truques que acredito serem bastante úteis para o desenvolvimento de bons componentes com Vue 2.'
 imgUrl: '5-tecnicas-que-todo-desenvolvedor.png'
 date: '17 de março, 2021'
