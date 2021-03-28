@@ -18,6 +18,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
+      { rel: 'preconnect', href: 'https://www.google-analytics.com' },
       {
         rel: 'stylesheet',
         href:
@@ -77,6 +78,12 @@ export default {
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/robots',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-130423536-1',
+      },
+    ],
   ],
 
   robots: {
