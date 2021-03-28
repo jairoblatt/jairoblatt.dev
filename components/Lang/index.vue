@@ -1,7 +1,7 @@
 <template>
   <div class="lang">
     <MenuExpand ref="menuExpand">
-      <template v-slot:selected="{ isOpen }">
+      <template #selected="{ isOpen }">
         <span> {{ $i18n.localeProperties.name }}</span>
         <Icon
           icon="arrow"
