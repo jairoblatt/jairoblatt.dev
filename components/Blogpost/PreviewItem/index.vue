@@ -43,11 +43,9 @@
           </div>
 
           <div class="post">
-            <span class="post__dot"> &bullet; </span>
             <span class="post__date">
               {{ post.date }}
             </span>
-            <span class="post__dot"> &bullet; </span>
             <span class="post__readingtime">
               &nbsp;{{ post.readingTime }}
             </span>
@@ -120,10 +118,6 @@ export default Vue.extend({
 
 .post {
   @apply flex lg:w-auto items-center justify-between leading-none;
-}
-
-.post__dot {
-  @apply hidden lg:inline-block text-xs mx-2 transition-colors;
 }
 
 .post__date {
